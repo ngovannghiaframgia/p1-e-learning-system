@@ -145,6 +145,7 @@ ActiveRecord::Schema.define(version: 2019_01_30_082800) do
     t.date "birth"
     t.integer "gender"
     t.string "address"
+    t.string "numberphone"
     t.integer "role", default: 0, null: false
     t.string "avt"
     t.boolean "active"
