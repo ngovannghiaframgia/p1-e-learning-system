@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  enum role: %i(student admin supperadmin)
+  enum role: {student: 0, admin: 1, supperadmin: 2}
   has_many :course_user, dependent: :destroy
   has_many :course, dependent: :destroy
   has_many :video, dependent: :destroy

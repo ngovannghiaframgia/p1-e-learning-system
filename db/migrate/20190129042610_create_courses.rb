@@ -4,10 +4,10 @@ class CreateCourses < ActiveRecord::Migration[5.2]
       t.references :subject, foreign_key: true
       t.references :user, foreign_key: true
       t.string :course_name
-      t.string :quantity_registered
-      t.decimal :price, precision: 20, scale: 2
-      t.string :description
+      t.integer :quantity_registered
       t.date :start_time
+      t.string :description
+      t.decimal :price, precision: 20, scale: 2
 
       t.timestamps
     end
