@@ -24,6 +24,7 @@ gem "bootstrap"
 gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.2"
 gem "rails-i18n"
 gem "jquery-rails"
+gem "factory_bot"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
@@ -46,6 +47,6 @@ group :test do
   gem "guard-rspec"
   gem "launchy"
   gem "shoulda-matchers", "~> 3.0.0"
-  gem "database_cleaner"
+  gem "database_cleaner", "~> 1.5"
 end
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

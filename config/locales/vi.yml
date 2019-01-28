@@ -11,6 +11,9 @@ vi:
   save: Lưu
   update: Cập Nhật
   not_permission: Không Có Quyền
+  back: quay lại
+  create_success: Tạo Thành Công
+  create_failed: Tạo Thất Bại
   layout:
     header:
       my_profile: Thông tin của tôi
@@ -113,7 +116,6 @@ vi:
         show:
           email: Email
     subjects:
-      create_success: Tạo Thành Công
       subject_updated: Đã Cập Nhật Môn Học
       update_failed: Cập Nhật Thất Bại
       subject_deleted: Đã xóa Môn Học
@@ -140,3 +142,19 @@ vi:
         placeholder_name: Tên Lớp . . .
         description: Mô Tả
         placeholder_description: Mô Tả . . .
+    courses:
+      index:
+        new_courses: Tạo Mới Khóa Học
+        courses_list: Danh Sách Khóa Học
+        course_name: Tên Khóa Học
+        start_time: Ngày Bắt Đầu
+        course_creator: Người Tạo Khóa Học
+        belong_subject: Thuộc Môn Học
+        price: Giá
+        quantity_registered: Số Lượng Đã Đăng Ký
+      new:
+      form:
+        new_courses: Tạo Mới Khóa Học
+        course_name: Tên Khóa Học
+        placeholder_course_name: Tên Khóa Học . . .
+        subject: Môn Học

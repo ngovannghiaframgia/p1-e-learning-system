@@ -1,9 +1,9 @@
 class User < ApplicationRecord
   enum role: {student: 0, admin: 1, supperadmin: 2}
-  has_many :course_user, dependent: :destroy
-  has_many :course, dependent: :destroy
-  has_many :video, dependent: :destroy
-  has_many :homework_result, dependent: :destroy
+  has_many :course_users, dependent: :destroy
+  has_many :courses, dependent: :destroy
+  has_many :videos, dependent: :destroy
+  has_many :homework_results, dependent: :destroy
 
   before_save :downcase_email
 
