@@ -1,0 +1,18 @@
+vi:
+  E_learning: "Học lập trình online"
+  home: Trang chủ
+  layout:
+    header:
+      my_profile: Thông tin của tôi
+      notification: Thông báo
+      settings: Cài đặt
+      logout: Đăng xuất
+    panner:
+      Class_Classification: Cẩm nang lớp học
+      Reservations: Quy định bảo lưu
+      Rules: Nội quy
+      Teaching_evaluation: Đánh giá giảng dạy
+      Class: Lớp học
+      create_cv: Tạo CV
+      level_test: Kiểm tra trình độ
+      Other: Khác

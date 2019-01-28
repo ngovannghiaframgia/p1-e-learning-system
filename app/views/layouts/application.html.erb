@@ -1,0 +1,28 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title><%= full_title(yield(:title)) %></title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+  <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+</head>
+
+<body>
+  <aside id="left-panel" class="left-panel">
+    <nav class="navbar navbar-expand-sm ">
+      <%= render "layouts/left_panner" %>
+    </nav>
+  </aside>
+  <div id="right-panel" class="right-panel">
+    <%= render "layouts/header" %>
+    <div class="content mt-3">
+      <%= yield %>
+    </div>
+  </div>
+</body>
+
+</html>

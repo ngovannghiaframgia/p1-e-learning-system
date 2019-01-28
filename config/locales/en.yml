@@ -1,0 +1,18 @@
+en:
+  E_learning: "Elearning"
+  home: Home
+  layout:
+    header:
+      my_profile: My Profile
+      notification: Notification
+      settings: Settings
+      logout: Log out
+    panner:
+      Class_Classification: Classification
+      Reservations: Reservations
+      Rules: Rules
+      Teaching_evaluation: Teaching evaluation
+      Class: Class
+      create_cv: Create CV
+      level_test: Level Test
+      Other: Other
