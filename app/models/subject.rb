@@ -1,7 +1,7 @@
 class Subject < ApplicationRecord
-  has_many :course, dependent: :destroy
-  has_many :video, dependent: :destroy
-  has_many :exercise
+  has_many :courses, dependent: :destroy
+  has_many :videos, dependent: :destroy
+  has_many :exercises
 
   validates :name_subject, presence: true, length: {maximum: Settings.subject.max_name}
 
