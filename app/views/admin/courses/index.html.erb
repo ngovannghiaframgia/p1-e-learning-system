@@ -1,0 +1,83 @@
+<div class="row">
+  <div class="breadcrumbs">
+    <div class="col-sm-4">
+      <div class="page-header float-left">
+        <div class="page-title">
+          <h1><%=link_to t(".new_courses"), new_admin_course_path, class: "btn btn-outline-success" %></h1>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="page-header float-right">
+        <div class="page-title">
+          <ol class="breadcrumb text-right">
+            <li><a href="#"></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content mt-3">
+    <div class="animated fadeIn">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <strong class="card-title"><%= t ".courses_list" %></strong>
+            </div>
+            <div class="table-responsive">
+              <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col"><%= t "number" %></th>
+                    <th scope="col"><%= t ".course_name" %></th>
+                    <th scope="col"><%= t ".course_creator" %></th>
+                    <th scope="col"><%= t ".belong_subject" %></th>
+                    <th scope="col"><%= t ".price" %></th>
+                    <th scope="col"><%= t ".description" %></th>
+                    <th scope="col"><%= t ".start_time" %></th>
+                    <th scope="col"><%= t ".quantity_registered" %></th>
+                    <th scope="col"><%= t ".actions" %></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @courses.each_with_index do |course, index| %>
+                    <tr>
+                      <th scope="row"><%= index+1 %></th>
+                      <td><%= course.course_name %></td>
+                      <td><%= course.user.email %></td>
+                      <td><%= course.subject.name_subject %></td>
+                      <td><%= course.price %></td>
+                      <td><%= course.description %></td>
+                      <td><%= course.start_time %></td>
+                      <td><%= course.quantity_registered %></td>
+                      <td>
+                        <div class="col-12">
+                          <%= link_to  admin_course_path(course), class: "btn btn-outline-primary btn-border-radius" do %>
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                          <% end %>
+                        </div>
+                        <div class="col-12">
+                          <%= link_to  edit_admin_course_path(course), class: "btn btn-outline-info btn-border-radius" do %>
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                          <% end %>
+                        </div>
+                        <div class="col-12">
+                          <%= link_to admin_course_path(course), method: :delete, data: {confirm: t(".you_sure")}, class: "btn btn-outline-danger btn-border-radius" do %>
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                          <% end %>
+                        </div>
+                      </td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+              <%= paginate @courses, theme: "twitter-bootstrap-4" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,11 +14,11 @@ class Admin::SubjectsController < Admin::AdminBaseController
   def create
     @subject = Subject.new subject_params
     if @subject.save
-      flash[:success] = t ".create_success"
-      render :index
+      flash[:success] = t "create_success"
+      redirect_to admin_subjects_path
     else
-      flash[:danger] = t ".update_failed"
-      render :new
+      flash[:danger] = t "create_failed"
+      redirect_to new_admin_course_path
     end
   end
 

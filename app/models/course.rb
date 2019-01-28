@@ -5,5 +5,6 @@ class Course < ApplicationRecord
   belongs_to :user
   belongs_to :subject
 
-  scope :desc, -> {order course_name: :desc}
+  scope :order_desc, -> {order course_name: :desc}
+  scope :order_asc, -> {order id: :asc }
 end
