@@ -1,16 +1,24 @@
-# p1-e-learning-system
-E-learning System
+# README
 
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-# Members:
-- Ngo Van Nghia
-- Ca Duy Du
+Things you may want to cover:
 
-# Requirements
-https://docs.google.com/document/d/19JS6GE0ScqmOoQLfdaSZylwmbdGyV6GckSPezHWPGQw/edit
+* Ruby version
 
-# DB
-https://cacoo.com/diagrams/4UiZzpG2QKPfapFk/C79F4
+* System dependencies
 
-# Redmine
-https://edu-redmine.framgia.vn/projects/p1-e-learning-system
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
