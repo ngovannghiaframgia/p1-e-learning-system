@@ -6,6 +6,7 @@ en:
   female: Female
   other_gender: Other gender
   select_gender: Select gender
+  number: Number
   cancel: Cancel
   save: Save
   update: Update
@@ -66,10 +67,11 @@ en:
     users:
       index:
         you_sure: You sure?
-        number: Number
         full_name: Full Name
         actions: Actions
         student_list: Student List
+        created_at: Created At
+        new_student: New Student
       edit:
         user_information: Student Information
         confirmation: Confirmation
@@ -85,3 +87,31 @@ en:
       update:
         profile_updated: Profile updated
         update_failed: Update Failed
+    subjects:
+      create_success: Create Success
+      subject_updated: Subject Updated
+      update_failed: Update Failed
+      subject_deleted: Subject Deleted
+      deleted_failed: Delete failed
+      index:
+        subject_list: Subject List
+        subject_name: Subject Name
+        description: Description
+        created_at: Created At
+        new_subject: New Subject
+        you_sure: You sure?
+      new:
+        new_subject: New Subject
+      edit:
+        edit_subject: Edit Subject
+      show:
+        name_subject: Subject Name
+        description: Description
+        created_at: Created At
+        updated_at: Updated At
+        show_subject: Show Subject
+      form:
+        name_subject: Subject Name
+        placeholder_name: Subject Name . . .
+        description: Description
+        placeholder_description: Description . . .

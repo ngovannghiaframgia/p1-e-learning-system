@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_30_082800) do
+ActiveRecord::Schema.define(version: 2019_02_24_061805) do
 
   create_table "comment_lessons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
@@ -40,8 +40,10 @@ ActiveRecord::Schema.define(version: 2019_01_30_082800) do
   create_table "courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "subject_id"
     t.bigint "user_id"
-    t.string "name_class"
-    t.string "quantity"
+    t.string "course_name"
+    t.string "quantity_registered"
+    t.decimal "price", precision: 20, scale: 2
+    t.string "description"
     t.date "start_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -130,6 +132,13 @@ ActiveRecord::Schema.define(version: 2019_01_30_082800) do
     t.index ["user_id"], name: "index_lessons_on_user_id"
     t.index ["video_id", "created_at"], name: "index_lessons_on_video_id_and_created_at"
     t.index ["video_id"], name: "index_lessons_on_video_id"
+  end
+
+  create_table "permissions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name_permission"
+    t.string "path"
+    t.integer "role_id"
+    t.string "icon"
   end
 
   create_table "subjects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

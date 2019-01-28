@@ -16,4 +16,20 @@ class ApplicationController < ActionController::Base
     flash[:danger] = t "users.please_log_in"
     redirect_to login_url
   end
+
+  def admin_user
+    return unless current_user.student?
+    flash[:danger] = t "not_permission"
+    redirect_to root_url
+  end
+
+  def list_permissions
+    @permissions = Permission.by_role_id User.roles[current_user.role]
+    @path_home =
+      if current_user.student?
+        user_path current_user
+      else
+        admin_user_path current_user
+      end
+    end
 end
