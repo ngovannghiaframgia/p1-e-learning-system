@@ -17,7 +17,7 @@ html,body{
 }
 
 .card{
-  height: 370px;
+  height: auto;
   margin-top: auto;
   margin-bottom: auto;
   width: 400px;
@@ -27,7 +27,7 @@ html,body{
 .social_icon span{
   font-size: 60px;
   margin-left: 10px;
-  color: $FFC312;
+  color: $light_yellow;
 }
 
 .social_icon span:hover{
@@ -47,7 +47,14 @@ html,body{
 
 .input-group-prepend span{
   width: 50px;
-  background-color: $FFC312;
+  background-color: $light_yellow;
+  color: $black;
+  border:0 !important;
+}
+
+.input-group-prepend label{
+  width: 50px;
+  background-color: $light_yellow;
   color: $black;
   border:0 !important;
 }
@@ -70,7 +77,7 @@ input:focus{
 
 .login_btn{
   color: $black;
-  background-color: $FFC312;
+  background-color: $light_yellow;
   width: 100px;
 }
 

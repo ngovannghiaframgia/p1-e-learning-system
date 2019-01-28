@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_01_30_082800) do
 
-  create_table "comment_lessons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci", force: :cascade do |t|
+  create_table "comment_lessons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id"
     t.bigint "lesson_id"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2019_01_30_082800) do
     t.index ["user_id"], name: "index_comment_lessons_on_user_id"
   end
 
-  create_table "course_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci", force: :cascade do |t|
+  create_table "course_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.boolean "status"
     t.decimal "debit", precision: 10
     t.bigint "user_id"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2019_01_30_082800) do
     t.index ["user_id"], name: "index_course_users_on_user_id"
   end
 
-  create_table "courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci", force: :cascade do |t|
+  create_table "courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "subject_id"
     t.bigint "user_id"
     t.string "name_class"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2019_01_30_082800) do
     t.index ["user_id"], name: "index_courses_on_user_id"
   end
 
-  create_table "exercises", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci", force: :cascade do |t|
+  create_table "exercises", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "question"
     t.text "detailed_answer"
     t.integer "lesson_number"
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2019_01_30_082800) do
     t.index ["subject_id"], name: "index_exercises_on_subject_id"
   end
 
-  create_table "exercises_answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci", force: :cascade do |t|
+  create_table "exercises_answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
     t.boolean "is_current"
     t.bigint "exercise_id"
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 2019_01_30_082800) do
     t.index ["exercise_id"], name: "index_exercises_answers_on_exercise_id"
   end
 
-  create_table "homework_results", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci", force: :cascade do |t|
+  create_table "homework_results", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.decimal "total_score", precision: 10
     t.decimal "reward_points", precision: 10
     t.text "comment"
@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 2019_01_30_082800) do
     t.index ["user_id"], name: "index_homework_results_on_user_id"
   end
 
-  create_table "homeworks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci", force: :cascade do |t|
+  create_table "homeworks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name_homework"
     t.integer "lesson_number"
     t.string "total_exercise"
@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(version: 2019_01_30_082800) do
     t.index ["lesson_id"], name: "index_homeworks_on_lesson_id"
   end
 
-  create_table "homeworks_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci", force: :cascade do |t|
+  create_table "homeworks_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "homework_id"
     t.bigint "exercise_id"
     t.datetime "created_at", null: false
@@ -108,7 +108,7 @@ ActiveRecord::Schema.define(version: 2019_01_30_082800) do
     t.index ["homework_id"], name: "index_homeworks_details_on_homework_id"
   end
 
-  create_table "lesson_videos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci", force: :cascade do |t|
+  create_table "lesson_videos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "lesson_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -116,7 +116,7 @@ ActiveRecord::Schema.define(version: 2019_01_30_082800) do
     t.index ["lesson_id"], name: "index_lesson_videos_on_lesson_id"
   end
 
-  create_table "lessons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci", force: :cascade do |t|
+  create_table "lessons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.string "content"
     t.bigint "user_id"
@@ -132,37 +132,29 @@ ActiveRecord::Schema.define(version: 2019_01_30_082800) do
     t.index ["video_id"], name: "index_lessons_on_video_id"
   end
 
-  create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci", force: :cascade do |t|
-    t.string "role"
-    t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "subjects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci", force: :cascade do |t|
+  create_table "subjects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name_subject"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email"
-    t.string "password"
     t.string "fullname"
     t.date "birth"
     t.integer "gender"
     t.string "address"
-    t.bigint "role_id"
+    t.integer "role", default: 0, null: false
     t.string "avt"
     t.boolean "active"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["role_id", "created_at"], name: "index_users_on_role_id_and_created_at"
-    t.index ["role_id"], name: "index_users_on_role_id"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  create_table "videos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci", force: :cascade do |t|
+  create_table "videos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name_video"
     t.string "link"
     t.integer "lesson_number"
@@ -194,7 +186,6 @@ ActiveRecord::Schema.define(version: 2019_01_30_082800) do
   add_foreign_key "lessons", "courses"
   add_foreign_key "lessons", "users"
   add_foreign_key "lessons", "videos"
-  add_foreign_key "users", "roles"
   add_foreign_key "videos", "subjects"
   add_foreign_key "videos", "users"
 end

@@ -1,0 +1,42 @@
+<%= form_with model: @user, html: {class: "login100-form validate-form"}, local: true do |f| %>
+  <span class="login100-form-title p-b-59">
+    <%= t(".sign_up") %>
+  </span>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <div class="wrap-input100 validate-input" data-validate="Name is required">
+    <%= f.label :fullname, t(".full_name"), :class => "label-input100"  %>
+    <%= f.text_field :fullname, class: "input100", placeholder: "Full name..." %>
+    <span class="focus-input100"></span>
+  </div>
+
+  <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+    <%= f.label :email, :class => "label-input100" %>
+    <%= f.email_field :email, class: "input100", placeholder: "Email addess..." %>
+    <span class="focus-input100"></span>
+  </div>
+
+  <div class="wrap-input100 validate-input" data-validate="Password is required">
+    <%= f.label :password, t(".password"), :class => "label-input100" %>
+    <%= f.password_field :password, class: "input100", placeholder: "*************" %>
+    <span class="focus-input100"></span>
+  </div>
+
+  <div class="wrap-input100 validate-input" data-validate="Repeat Password is required">
+    <%= f.label :password_confirmation, t(".confirmation"), :class => "label-input100" %>
+    <%= f.password_field :password_confirmation, class: "input100", placeholder: "*************" %>
+    <span class="focus-input100"></span>
+  </div>
+
+  <div class="container-login100-form-btn">
+    <div class="wrap-login100-form-btn">
+      <div class="login100-form-bgbtn"></div>
+      <%= f.submit t(".sign_up"), class: "login100-form-btn" %>
+    </div>
+
+    <%= link_to login_path, class: "dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30" do %>
+      Sign in
+      <i class="fa fa-long-arrow-right m-l-5"></i>
+    <% end %>
+  </div>
+<% end %>
