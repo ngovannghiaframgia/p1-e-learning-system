@@ -148,7 +148,6 @@ ActiveRecord::Schema.define(version: 2019_01_30_082800) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci", force: :cascade do |t|
     t.string "email"
-    t.string "password"
     t.string "fullname"
     t.date "birth"
     t.integer "gender"
@@ -156,6 +155,7 @@ ActiveRecord::Schema.define(version: 2019_01_30_082800) do
     t.bigint "role_id"
     t.string "avt"
     t.boolean "active"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

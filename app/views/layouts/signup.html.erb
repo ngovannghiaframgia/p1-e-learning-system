@@ -1,0 +1,33 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= full_title(yield(:title)) %></title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+  <link href="/assets/sigup.scss" media="all" rel="stylesheet" type="text/css" />
+
+  <link rel="icon" type="image/png" href="/assets/images/icons/favicon.ico"/>
+	<%= stylesheet_link_tag "sigup", media: "all", "data-turbolinks-track": "reload" %>
+  <link href="/assets/main-sign.scss" media="all" rel="stylesheet" type="text/css" />
+  <link href="/assets/util-signup.scss" media="all" rel="stylesheet" type="text/css" />
+
+  <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+</head>
+
+<body>
+  <div class="limiter">
+		<div class="container-login100">
+			<div class="login100-more"></div>
+
+			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+        <%= yield %>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

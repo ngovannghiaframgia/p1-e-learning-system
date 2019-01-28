@@ -17,4 +17,5 @@
 //= require "popper.min.js"
 //= require "bootstrap.min.js"
 //= require "main.js"
-//= require_tree .
+//= require "dashboard.js"
+//= require "widgets.js"
