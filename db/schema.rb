@@ -158,6 +158,7 @@ ActiveRecord::Schema.define(version: 2019_01_30_082800) do
     t.boolean "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["role_id", "created_at"], name: "index_users_on_role_id_and_created_at"
     t.index ["role_id"], name: "index_users_on_role_id"
   end
