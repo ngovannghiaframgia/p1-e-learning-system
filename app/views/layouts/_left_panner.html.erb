@@ -1,0 +1,58 @@
+<div class="navbar-header">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
+    aria-controls="main-menu"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fa fa-bars"></i>
+  </button>
+  <%= link_to "", class: "navbar-brand" do %>
+    <%= image_tag "elearn-logo-sm.png", alt: "Logo" %>
+  <% end %>
+  <%= link_to "", class: "navbar-brand hidden" do %>
+    <%= image_tag "image.png", alt: "Logo" %>
+  <% end %>
+</div>
+
+<div id="main-menu" class="main-menu collapse navbar-collapse">
+  <ul class="nav navbar-nav">
+    <li class="active">
+      <%= link_to do %>
+        <%= t "home" %>
+        <i class="menu-icon fa fa-dashboard"></i>
+      <% end %>
+    </li>
+    <h3 class="menu-title"><%= t "layout.panner.Class_Classification" %></h3>
+    <li class="menu-item-has-children">
+      <%= link_to do %>
+        <%= t "layout.panner.Reservations" %>
+        <i class="menu-icon fa fa-laptop"></i>
+      <% end %>
+    <li class="menu-item-has-children">
+      <%= link_to do %>
+        <%= t "layout.panner.Rules" %>
+        <i class="menu-icon fa fa-table"></i>
+      <% end %>
+    </li>
+    <li class="menu-item-has-children">
+      <%= link_to do %>
+        <%= t "layout.panner.Teaching_evaluation" %>
+        <i class="menu-icon fa fa-th"></i>
+      <% end %>
+    </li>
+
+    <h3 class="menu-title"><%= t "layout.panner.Class" %></h3>
+
+    <h3 class="menu-title"><%= t "layout.panner.Other" %></h3>
+    <li class="menu-item-has-children">
+      <%= link_to do %>
+        <%= t "layout.panner.create_cv" %>
+        <i class="menu-icon fa fa-glass"></i>
+      <% end %>
+    </li>
+    <li class="menu-item-has-children">
+      <%= link_to do %>
+        <%= t "layout.panner.level_test" %>
+        <i class="menu-icon fa fa-glass"></i>
+      <% end %>
+    </li>
+  </ul>
+</div>
