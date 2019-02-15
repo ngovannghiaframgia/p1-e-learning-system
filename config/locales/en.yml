@@ -1,6 +1,7 @@
 en:
   E_learning: "Elearning"
   home: Home
+  Login: Login
   layout:
     header:
       my_profile: My Profile
@@ -16,3 +17,10 @@ en:
       create_cv: Create CV
       level_test: Level Test
       Other: Other
+  static_pages:
+    login:
+      login: Log in
+      Sign_Up: Sign Up
+      Remember_Me: Remember Me
+      account: Don't have an account?
+      Forgot_your_password: Forgot your password?
