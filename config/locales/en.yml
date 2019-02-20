@@ -24,3 +24,32 @@ en:
       Remember_Me: Remember Me
       account: Don't have an account?
       Forgot_your_password: Forgot your password?
+  not_found: "Not Found !"
+  users:
+    profile_updated: "Profile updated"
+    user_deleted: "User deleted"
+    deleted_failed: "Delete failed"
+    please_log_in: "Please log in."
+    sigup_success: Sign Up Success
+    new:
+      sign_up: "Sign up"
+      create_my_account: "Create my account"
+      confirmation: "Confirmation"
+      password: "Password"
+      name: "Name"
+    form:
+      confirmation: "Confirmation"
+      password: "Password"
+      name: "Name"
+  sessions:
+    invalid_email_password: "Invalid email/password combination"
+    new:
+      password: "Password"
+      log_in: "Log in"
+  shared:
+    error_messages:
+      the_form_contains: "The form contains"
+  layouts:
+    sigup:
+      full_name: "Full Name"
+      sign_up: "Sign up"

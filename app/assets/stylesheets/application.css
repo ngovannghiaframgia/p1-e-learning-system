@@ -14,6 +14,13 @@
  *= require font-awesome
  *= require "style.css"
  *= require "css.css"
+ *= require customs.scss
+ *= require "animate.css"
+ *= require "animsition.min.css"
+ *= require "daterangepicker.css"
+ *= require "hamburgers.min.css"
+ *= require "select2.min.css"
+ *= require main-sign.scss
+ *= require util-signup.scss
  *= require_self
- *= require_tree .
  */
