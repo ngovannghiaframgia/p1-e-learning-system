@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-  enum role: %i(student admin supperAdmin)
+  enum role: %i(student admin supperadmin)
   has_many :course_user, dependent: :destroy
-  has_many :Course, dependent: :destroy
+  has_many :course, dependent: :destroy
   has_many :video, dependent: :destroy
   has_many :homework_result, dependent: :destroy
 
@@ -16,6 +16,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length: {minimum: Settings.user.min_password}, allow_nil: true
 
   scope :order_asc, -> {order id: :asc }
+  scope :by_role, -> (role){ where role: role }
 
   def current_user? user
     self == user

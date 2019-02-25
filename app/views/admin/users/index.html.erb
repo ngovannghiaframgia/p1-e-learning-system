@@ -1,1 +1,69 @@
-<h1>index</h1>
+<% provide(:title, current_user.fullname) %>
+<div class="row">
+  <div class="breadcrumbs">
+    <div class="col-sm-4">
+      <div class="page-header float-left">
+        <div class="page-title">
+          <h1></h1>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="page-header float-right">
+        <div class="page-title">
+          <ol class="breadcrumb text-right">
+            <li><a href="#"></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content mt-3">
+    <div class="animated fadeIn">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <strong class="card-title"><%= t ".student_list" %></strong>
+            </div>
+            <div class="card-body">
+              <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th><%= t ".number" %></th>
+                    <th><%= t ".full_name" %></th>
+                    <th>Email</th>
+                    <th><%= t ".actions" %></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @users.each_with_index do |user, index| %>
+                    <tr>
+                      <td><%= index+1 %></td>
+                      <td><%= user.fullname %></td>
+                      <td><%= user.email %></td>
+                      <td>
+                        <div class="col-6">
+                          <%= link_to  edit_admin_user_path(user), class: "btn btn-outline-info btn-border-radius" do %>
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                          <% end %>
+                        </div>
+                        <div class="col-6">
+                          <%= link_to admin_user_path(user), method: :delete, data: {confirm: t(".you_sure")}, class: "btn btn-outline-danger btn-border-radius" do %>
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                          <% end %>
+                        </div>
+                      </td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+              <%= paginate @users, theme: "twitter-bootstrap-4" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
