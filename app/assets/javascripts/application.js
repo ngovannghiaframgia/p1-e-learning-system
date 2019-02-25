@@ -10,12 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
-//= require activestorage
-//= require turbolinks
 //= require "jquery.min.js"
 //= require "popper.min.js"
 //= require "bootstrap.min.js"
+//= require activestorage
+//= require turbolinks
 //= require "main.js"
 //= require "dashboard.js"
 //= require "widgets.js"

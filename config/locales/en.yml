@@ -1,7 +1,15 @@
 en:
-  E_learning: "Elearning"
+  E_learning: Elearning
   home: Home
   Login: Login
+  male: Male
+  female: Female
+  other_gender: Other gender
+  select_gender: Select gender
+  cancel: Cancel
+  save: Save
+  update: Update
+  not_permission: Not Permission
   layout:
     header:
       my_profile: My Profile
@@ -24,32 +32,73 @@ en:
       Remember_Me: Remember Me
       account: Don't have an account?
       Forgot_your_password: Forgot your password?
-  not_found: "Not Found !"
+  not_found: Not Found !
   users:
-    profile_updated: "Profile updated"
-    user_deleted: "User deleted"
-    deleted_failed: "Delete failed"
-    please_log_in: "Please log in."
-    sigup_success: Sign Up Success
+    profile_updated: Profile updated
+    user_deleted: User deleted
+    deleted_failed: Delete failed
+    please_log_in: Please log in.
+    signup_success: Sign Up Successs
     new:
-      sign_up: "Sign up"
-      create_my_account: "Create my account"
-      confirmation: "Confirmation"
-      password: "Password"
-      name: "Name"
+      sign_up: Sign up
+      create_my_account: Create my account
+      confirmation: Confirmation
+      password: Password
+      name: Name
     form:
-      confirmation: "Confirmation"
-      password: "Password"
-      name: "Name"
+      confirmation: Confirmation
+      password: Password
+      full_name: Full Name
   sessions:
-    invalid_email_password: "Invalid email/password combination"
+    invalid_email_password: Invalid email/password combination
+    not_permission: Not Permission
     new:
-      password: "Password"
-      log_in: "Log in"
+      password: Password
+      log_in: Log in
   shared:
     error_messages:
-      the_form_contains: "The form contains"
+      the_form_contains: The form contains
   layouts:
     sigup:
-      full_name: "Full Name"
-      sign_up: "Sign up"
+      full_name: Full Name
+      sign_up: Sign up
+  admin:
+    users:
+      index:
+        you_sure: You sure?
+        number: Number
+        full_name: Full Name
+        actions: Actions
+        student_list: Student List
+      edit:
+        user_information: Student Information
+        confirmation: Confirmation
+        password: Password
+        full_name: Full Name
+        placeholder_fullnames: Full Name . . .
+        address: Address
+        placeholder_paddress: Address . . .
+        number_phone: Number Phone
+        placeholder_numberphone: Number Phone . . .
+        birth: Birth
+        gender: Gender
+      update:
+        profile_updated: Profile updated
+        update_failed: Update Failed
+  courses:
+    index:
+      Class_information: Class information
+      ifnormations: Informations
+      class: Class
+      table: Tables
+      list_of_class: List Of Class
+      class_name: Class Name
+      quantity: Quantity
+      Tuition: Tuition
+      Register: Register
+    pagination:
+      first: "« FIRST"
+      last: "LAST »"
+      previous: "‹ PREV"
+      next: "NEXT ›"
+      truncate: "…"

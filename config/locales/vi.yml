@@ -1,7 +1,15 @@
 vi:
-  E_learning: "Học lập trình online"
+  E_learning: Học lập trình online
   home: Trang chủ
   Login: Đăng nhập hệ thống
+  male: Nam
+  female: Nữ
+  other_gender: Giới tính khác
+  select_gender: Chọn giới tính
+  cancel: Hủy
+  save: Lưu
+  update: Cập Nhật
+  not_permission: Không Có Quyền
   layout:
     header:
       my_profile: Thông tin của tôi
@@ -24,29 +32,70 @@ vi:
       Remember_Me: Ghi nhớ
       account: Chưa có tài khoản?
       Forgot_your_password: Quên mật khẩu?
-  not_found: "Không tìm thấy!"
+  not_found: Không tìm thấy!
   users:
-    profile_updated: "Hồ sơ cá nhân đã cập nhật"
-    user_deleted: "Người dùng đã xóa"
-    deleted_failed: "Xoá thất bại"
-    please_log_in: "Xin vui lòng đăng nhập."
-    sigup_success: Đăng Ký Thành Công
+    profile_updated: Hồ sơ cá nhân đã cập nhật
+    user_deleted: Người dùng đã xóa
+    deleted_failed: Xoá thất bại
+    please_log_in: Xin vui lòng đăng nhập.
+    signup_success: Đăng Ký Thành Công
     new:
       sign_up: Đăng Ký
-      create_my_account: "Tạo tài khoản của tôi"
+      create_my_account: Tạo tài khoản của tôi
     form:
-      confirmation: "Xác nhận"
-      password: "Mật khẩu"
-      name: "Tên"
+      confirmation: Xác nhận
+      password: Mật khẩu
+      full_name: Tên Đầy Đủ
   sessions:
-    invalid_email_password: "Kết hợp email/mật khẩu không hợp lệ"
+    invalid_email_password: Kết hợp email/mật khẩu không hợp lệ
+    not_permission: Không Có Quyền
     new:
-      password: "Mật Khẩu"
-      log_in: "Đăng Nhập"
+      password: Mật Khẩu
+      log_in: Đăng Nhập
   shared:
     error_messages:
-      the_form_contains: "Biểu mẫu có chứa"
+      the_form_contains: Biểu mẫu có chứa
   layouts:
     sigup:
-      full_name: "Tên Đầy Đủ"
+      full_name: Tên Đầy Đủ
       sign_up: Đăng Ký
+  admin:
+    users:
+      index:
+        you_sure: Bạn chắc chắn?
+        number: STT
+        full_name: Tên Đầy Đủ
+        actions: Thao Tác
+        student_list: Danh Sách Học Viên
+      edit:
+        user_information: Thông tin học viên
+        confirmation: Xác nhận
+        password: Mật khẩu
+        full_name: Tên Đầy Đủ
+        placeholder_fullnames: Tên Đầy Đủ . . .
+        address: Địa Chỉ
+        placeholder_paddress: Địa Chỉ . . .
+        number_phone: Số Điện Thoại
+        placeholder_numberphone: Số Điện Thoại . . .
+        birth: Ngày Sinh
+        gender: Giới Tính
+      update:
+        profile_updated: Hồ  Sơ Đã Cập Nhật
+        update_failed: Cập Nhật Thất Bại
+  courses:
+    index:
+      Class_information: "Thông tin lớp học"
+      ifnormations: Thông tin
+      class: Lớp
+      table: Bảng
+      list_of_class: Danh Sách Lớp Học
+      class_name: Tên Lớp Học
+      quantity: Số Lượng
+      Tuition: Học Phí
+      Register: Đăng ký
+    pagination:
+      first: "« TRƯỚC"
+      last: "SAU»"
+      previous: "‹ QUAY LẠI"
+      next: "TIẾP THEO ›"
+      truncate: "…"

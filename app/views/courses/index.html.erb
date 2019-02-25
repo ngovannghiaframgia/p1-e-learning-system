@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="breadcrumbs">
+    <div class="col-sm-4">
+      <div class="page-header float-left">
+        <div class="page-title">
+          <h1><%= t "courses.index.Class_information" %></h1>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="page-header float-right">
+        <div class="page-title">
+          <ol class="breadcrumb text-right">
+            <li><%= t "courses.index.ifnormations" %></li>
+            <li><%= t "courses.index.class" %></li>
+            <li class="active"><%= t "courses.index.table" %></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content mt-3">
+    <div class="animated fadeIn">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <strong class="card-title"><%= t "courses.index.list_of_class" %></strong>
+            </div>
+            <div class="card-body">
+              <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th><%= t "courses.index.class_name" %></th>
+                    <th><%= t "courses.index.Class_information" %></th>
+                    <th><%= t "courses.index.quantity" %></th>
+                    <th><%= t "courses.index.Tuition" %></th>
+                    <th><%= t "courses.index.Register" %></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @courses.each do |courses| %>
+                    <tr>
+                      <td><%= courses.course_name %></td>
+                      <td><%= courses.description %></td>
+                      <td><%= courses.quantity_registered %></td>
+                      <td><%= courses.price %></td>
+                      <td>
+                        <%= link_to do %>
+                          <button class="btn btn-primary"><%= t "courses.index.Register" %></button>
+                        <% end %>
+                      </td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+              <%= paginate @courses, theme: "twitter-bootstrap-4" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
