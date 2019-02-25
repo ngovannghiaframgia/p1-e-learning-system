@@ -2,6 +2,6 @@ user:
   max_name: 50
   max_email: 255
   min_password: 6
-  record_page: 10
+  record_page: 5
   gravatar_user: 50
   time_token: 2

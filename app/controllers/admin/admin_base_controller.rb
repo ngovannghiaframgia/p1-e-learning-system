@@ -1,4 +1,2 @@
-module Admin
-  class AdminBaseController < ApplicationController
-  end
+class Admin::AdminBaseController < ApplicationController
 end

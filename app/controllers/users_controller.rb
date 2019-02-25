@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   layout "signup", only: %i(create new)
 
-  before_action :load_user, only: %i(index show)
-  before_action :logged_in_user, only: %i(index correct_user)
-  before_action :correct_user, only: %i(index show)
+  before_action :load_user, :logged_in_user, except: %i(new create)
+  before_action :current_user, only: %i(show edit)
+  before_action :admin_user, only: %i(index show )
 
   def index
   end
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      flash[:success] = t ".sigup_success"
+      flash[:success] = t ".signup_success"
       redirect_to root_url
     else
       render :new
@@ -38,8 +38,12 @@ class UsersController < ApplicationController
 
   def load_user
     @user = User.find_by id: params[:id]
-    return if @user
+    return if (@user || current_user)
     flash[:danger] = t "not_found"
     redirect_to login_path
+  end
+
+  def admin_user
+    redirect_to admin_user_path current_user unless current_user.student?
   end
 end
