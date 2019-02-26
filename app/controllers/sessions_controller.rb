@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       if user.admin? || user.supperadmin?
         redirect_to admin_users_path
       else
-        redirect_to users_path
+        redirect_to courses_path
       end
     else
       flash.now[:danger] = t ".invalid_email_password"

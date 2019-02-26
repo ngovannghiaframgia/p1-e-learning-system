@@ -82,3 +82,20 @@ vi:
       update:
         profile_updated: Hồ  Sơ Đã Cập Nhật
         update_failed: Cập Nhật Thất Bại
+  courses:
+    index:
+      Class_information: "Thông tin lớp học"
+      ifnormations: Thông tin
+      class: Lớp
+      table: Bảng
+      list_of_class: Danh Sách Lớp Học
+      class_name: Tên Lớp Học
+      quantity: Số Lượng
+      Tuition: Học Phí
+      Register: Đăng ký
+    pagination:
+      first: "« TRƯỚC"
+      last: "SAU»"
+      previous: "‹ QUAY LẠI"
+      next: "TIẾP THEO ›"
+      truncate: "…"

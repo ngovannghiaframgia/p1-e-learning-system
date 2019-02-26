@@ -11,9 +11,6 @@
 // about supported directives.
 //
 //= require "jquery.min.js"
-//= require jquery
-//= require jquery_ujs
-//= require rails-ujs
 //= require "popper.min.js"
 //= require "bootstrap.min.js"
 //= require activestorage

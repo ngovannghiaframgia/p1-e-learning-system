@@ -40,8 +40,10 @@ ActiveRecord::Schema.define(version: 2019_01_30_082800) do
   create_table "courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "subject_id"
     t.bigint "user_id"
-    t.string "name_class"
-    t.string "quantity"
+    t.string "course_name"
+    t.string "quantity_registered"
+    t.decimal "price", precision: 20, scale: 2
+    t.string "description"
     t.date "start_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

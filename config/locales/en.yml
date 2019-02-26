@@ -85,3 +85,20 @@ en:
       update:
         profile_updated: Profile updated
         update_failed: Update Failed
+  courses:
+    index:
+      Class_information: Class information
+      ifnormations: Informations
+      class: Class
+      table: Tables
+      list_of_class: List Of Class
+      class_name: Class Name
+      quantity: Quantity
+      Tuition: Tuition
+      Register: Register
+    pagination:
+      first: "« FIRST"
+      last: "LAST »"
+      previous: "‹ PREV"
+      next: "NEXT ›"
+      truncate: "…"

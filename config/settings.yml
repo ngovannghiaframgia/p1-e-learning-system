@@ -5,3 +5,5 @@ user:
   record_page: 5
   gravatar_user: 50
   time_token: 2
+courses:
+  page: 1
