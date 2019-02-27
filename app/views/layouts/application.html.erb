@@ -21,11 +21,7 @@
   <div id="right-panel" class="right-panel">
     <%= render "layouts/header" %>
     <div class="content mt-3">
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>">
-          <%= message %>
-        </div>
-      <% end %>
+      <%= render "shared/show_flash" %>
       <%= yield %>
     </div>
   </div>
