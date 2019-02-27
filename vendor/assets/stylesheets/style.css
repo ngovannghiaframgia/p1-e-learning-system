@@ -936,7 +936,11 @@ body {
   width: 100%; }
 
 div[class*="col-"] {
-  float: left; }
+  float: left;
+}
+.padding-top-10 {
+  padding-top: 10px;
+}
 
 p {
   font-size: 16px;
@@ -1108,7 +1112,7 @@ aside.left-panel {
         .navbar .navbar-nav li.menu-item-has-children a {
           line-height: 30px; }
           .navbar .navbar-nav li.menu-item-has-children a:before {
-            
+
             color: #c8c9ce;
             font-family: 'Fontawesome';
             font-size: 16px;

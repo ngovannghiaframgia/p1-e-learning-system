@@ -12,6 +12,8 @@
 //
 //= require "jquery.min.js"
 //= require "popper.min.js"
+//= require jquery_ujs
+//= require rails-ujs
 //= require "bootstrap.min.js"
 //= require activestorage
 //= require turbolinks

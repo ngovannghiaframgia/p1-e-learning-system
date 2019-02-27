@@ -6,6 +6,7 @@ vi:
   female: Nữ
   other_gender: Giới tính khác
   select_gender: Chọn giới tính
+  number: STT
   cancel: Hủy
   save: Lưu
   update: Cập Nhật
@@ -63,10 +64,12 @@ vi:
     users:
       index:
         you_sure: Bạn chắc chắn?
-        number: STT
         full_name: Tên Đầy Đủ
         actions: Thao Tác
         student_list: Danh Sách Học Viên
+        created_at: Ngày Tạo
+        new_student: Tạo Mới
+        email: Email
       edit:
         user_information: Thông tin học viên
         confirmation: Xác nhận
@@ -82,20 +85,58 @@ vi:
       update:
         profile_updated: Hồ  Sơ Đã Cập Nhật
         update_failed: Cập Nhật Thất Bại
-  courses:
-    index:
-      Class_information: "Thông tin lớp học"
-      ifnormations: Thông tin
-      class: Lớp
-      table: Bảng
-      list_of_class: Danh Sách Lớp Học
-      class_name: Tên Lớp Học
-      quantity: Số Lượng
-      Tuition: Học Phí
-      Register: Đăng ký
-    pagination:
-      first: "« TRƯỚC"
-      last: "SAU»"
-      previous: "‹ QUAY LẠI"
-      next: "TIẾP THEO ›"
-      truncate: "…"
+      show:
+        show_user: Chi Tiết Người Dùng
+        full_name: Tên Đầy Đủ
+        address: Địa Chỉ
+        number_phone: Số Điện Thoại
+        birth: Ngày Sinh
+        gender: Giới Tính
+        email: Email
+    courses:
+      index:
+        Class_information: "Thông tin lớp học"
+        ifnormations: Thông tin
+        class: Lớp
+        table: Bảng
+        list_of_class: Danh Sách Lớp Học
+        class_name: Tên Lớp Học
+        quantity: Số Lượng
+        Tuition: Học Phí
+        Register: Đăng ký
+      pagination:
+        first: "« TRƯỚC"
+        last: "SAU»"
+        previous: "‹ QUAY LẠI"
+        next: "TIẾP THEO ›"
+        truncate: "…"
+        show:
+          email: Email
+    subjects:
+      create_success: Tạo Thành Công
+      subject_updated: Đã Cập Nhật Môn Học
+      update_failed: Cập Nhật Thất Bại
+      subject_deleted: Đã xóa Môn Học
+      deleted_failed: Xóa Thất Bại
+      index:
+        subject_name: Tên Môn Học
+        description: Mô Tả
+        created_at: Ngày Tạo
+        subject_list: Danh Môn Học
+        new_subject: Tạo Mới Môn Học
+        you_sure: Bạn chắc chắn?
+      new:
+        new_subject: Tạo Mới Môn Học
+      edit:
+        edit_subject: Sửa Lớp Học
+      show:
+        name_subject: Tên Lớp
+        description: Mô Tả
+        created_at: Ngày Tạo
+        updated_at: Ngày Cập Nhật
+        show_subject: Chi Tiết Lớp Học
+      form:
+        name_subject: Tên Lớp
+        placeholder_name: Tên Lớp . . .
+        description: Mô Tả
+        placeholder_description: Mô Tả . . .

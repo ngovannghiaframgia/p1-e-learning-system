@@ -37,9 +37,7 @@
               <%= f.password_field :password, class: "form-control", placeholder: t(".password") %>
             </div>
 
-            <% flash.each do |message_type, message| %>
-              <div class="alert alert-<%= message_type %>"><%= message %></div>
-            <% end %>
+            <%= render "shared/show_flash" %>
 
             <div class="row align-items-center remember">
               <%= f.label :remember_me, class: "checkbox inline" do %>
