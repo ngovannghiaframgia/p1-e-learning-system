@@ -1,0 +1,6 @@
+--require spec_helper
+--format documentation
+--color
+--format progress
+--order random
+--require rails_helper

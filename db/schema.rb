@@ -41,10 +41,10 @@ ActiveRecord::Schema.define(version: 2019_02_24_061805) do
     t.bigint "subject_id"
     t.bigint "user_id"
     t.string "course_name"
-    t.string "quantity_registered"
-    t.decimal "price", precision: 20, scale: 2
-    t.string "description"
+    t.integer "quantity_registered"
     t.date "start_time"
+    t.string "description"
+    t.decimal "price", precision: 20, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subject_id", "created_at"], name: "index_courses_on_subject_id_and_created_at"
