@@ -341,7 +341,8 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   config
-  database_cleaner
+  database_cleaner (~> 1.5)
+  factory_bot
   factory_bot_rails
   faker
   ffaker
