@@ -2,11 +2,11 @@ require "rails_helper"
 require "admin/users_controller"
 
 RSpec.describe Admin::UsersController, type: :controller do
-
   before { create_login }
+
   context "#index" do
     it "responds successfully" do
-      get	:index
+      get :index
       expect(response).to have_http_status(200)
     end
   end
@@ -23,7 +23,7 @@ RSpec.describe Admin::UsersController, type: :controller do
       user_one = FactoryBot.create :user
       expect {
         delete :destroy, params: { id: user_one.id }
-       }.to change(User, :count).by(-1)
+      }.to change(User, :count).by(-1)
     end
   end
 
