@@ -112,10 +112,13 @@ ActiveRecord::Schema.define(version: 2019_02_24_061805) do
 
   create_table "lesson_videos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "lesson_id"
+    t.bigint "video_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["lesson_id", "created_at"], name: "index_lesson_videos_on_lesson_id_and_created_at"
     t.index ["lesson_id"], name: "index_lesson_videos_on_lesson_id"
+    t.index ["video_id", "created_at"], name: "index_lesson_videos_on_video_id_and_created_at"
+    t.index ["video_id"], name: "index_lesson_videos_on_video_id"
   end
 
   create_table "lessons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -193,6 +196,7 @@ ActiveRecord::Schema.define(version: 2019_02_24_061805) do
   add_foreign_key "homeworks_details", "exercises"
   add_foreign_key "homeworks_details", "homeworks"
   add_foreign_key "lesson_videos", "lessons"
+  add_foreign_key "lesson_videos", "videos"
   add_foreign_key "lessons", "courses"
   add_foreign_key "lessons", "users"
   add_foreign_key "lessons", "videos"
