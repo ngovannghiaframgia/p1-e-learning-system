@@ -25,6 +25,7 @@ gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.2"
 gem "rails-i18n"
 gem "jquery-rails"
 gem "factory_bot"
+gem "rails-controller-testing"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
