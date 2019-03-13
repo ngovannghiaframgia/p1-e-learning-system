@@ -4,6 +4,7 @@ require 'factory_bot_rails'
 ENV['RAILS_ENV'] ||= 'test'
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
+include SessionsHelper
 
 begin
   ActiveRecord::Migration.maintain_test_schema!
