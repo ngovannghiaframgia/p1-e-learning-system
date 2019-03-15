@@ -11,19 +11,6 @@ class Admin::UsersController < Admin::AdminBaseController
   def show
   end
 
-  def edit
-  end
-
-  def update
-    if @user.update user_params
-      flash[:success] = t ".profile_updated"
-      render :edit
-    else
-      flash[:danger] = t ".update_failed"
-      render :edit
-    end
-  end
-
   def destroy
     if @user.destroy
       flash[:success] = t ".user_deleted"

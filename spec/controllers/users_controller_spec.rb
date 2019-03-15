@@ -41,7 +41,6 @@ RSpec.describe UsersController, type: :controller do
   end
 
   private
-
   def create_login
     @user_one = FactoryBot.create :user
     log_in @user_one
