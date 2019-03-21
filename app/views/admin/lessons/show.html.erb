@@ -1,38 +1,60 @@
-<% provide :title, t("lessons.index.show_lessons") %>
+<% provide :title, t(".show_lesson") %>
 
 <div class="container py-3" >
   <div class="row">
-    <div class="mx-auto col-sm-6">
+    <div class="mx-auto col-sm-12">
       <div class="card">
         <div class="card-header">
-          <h4 class="mb-0"><%= t "lessons.index.show_lessons" %></h4>
+          <h4 class="mb-0"><%= t ".show_lesson" %></h4>
         </div>
         <div class="card-body">
           <%= form_for @lessons, url: "#" do |f| %>
             <div class="form-group row">
-              <%= f.label :title,  t("lessons.index.title"), class: "col-lg-3 col-form-label form-control-label"  %>
+              <%= f.label :title, t("lessons.index.title"), class: "col-lg-3 col-form-label form-control-label"  %>
               <div class="col-lg-9 padding-top-10">
                 <h4><%= @lessons.title %></h4>
               </div>
             </div>
             <div class="form-group row">
-              <%= f.label :content, t("lessons.index.content"), class: "col-lg-3 col-form-label form-control-label"  %>
+              <%= f.label :course_id, t("lessons.index.course"), class: "col-lg-3 col-form-label form-control-label"  %>
               <div class="col-lg-9 padding-top-10">
-                <h4><%= @lessons.content %></h4>
+                <h4><%= @lessons.course.course_name %></h4>
               </div>
             </div>
             <div class="form-group row">
-              <%= f.label :course, t("courses.index.course"), class: "col-lg-3 col-form-label form-control-label" %>
-              <div class="col-lg-9">
-                <%= f.select :course_id, options_for_select(@list_courses,
-                selected: @lessons),
-                { }, { class: "form-control", disabled: "true"  } %>
+              <%= f.label :created_at, t("created_at"), class: "col-lg-3 col-form-label form-control-label" %>
+              <div class="col-lg-9 padding-top-10">
+                <h4><%= @lessons.created_at %></h4>
+              </div>
+            </div>
+            <div class="form-group row">
+              <%= f.label :updated_at, t("updated_at"), class: "col-lg-3 col-form-label form-control-label" %>
+              <div class="col-lg-9 padding-top-10">
+                <h4><%= @lessons.updated_at %></h4>
+              </div>
+            </div>
+            <div class="form-group row">
+              <%= f.label :lesson_videos, t("lessons.index.video"), class: "col-lg-3 col-form-label form-control-label"  %>
+              <div class="col-lg-9 padding-top-10">
+                <h4>
+                  <% if @lessons.lesson_videos.empty? %>
+                    <%= t "no_video" %>
+                  <% else %>
+                    <%= @lessons.lesson_videos[0].video.link.html_safe %>
+                  <% end %>
+                </h4>
+              </div>
+            </div>
+            <div class="form-group row">
+              <%= f.label :content, t("lessons.index.content"), class: "col-lg-12 col-form-label form-control-label" %>
+              <div class="col-lg-12">
+                <h4><%= @lessons.content.html_safe %></h4>
               </div>
             </div>
             <div class="form-group row">
               <label class="col-lg-3 col-form-label form-control-label"></label>
               <div class="col-lg-9">
-                <%= link_to t("back"), admin_lessons_path, class: "btn btn-secondary" %>
+                <%= link_to t("back"), admin_course_lessons_path, class: "btn btn-secondary" %>
               </div>
             </div>
           <% end %>

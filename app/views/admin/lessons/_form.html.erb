@@ -7,32 +7,49 @@
     </div>
   </div>
   <div class="form-group row">
-    <%= f.label :content, t("lessons.index.content"), class: "col-lg-3 col-form-label form-control-label" %>
+    <%= f.label :course, t(".course"), class: "col-lg-3 col-form-label form-control-label" %>
     <div class="col-lg-9">
-      <%= f.cktext_area :content, class: "form-control", placeholder: t("lessons.index.content") %>
+      <h4><%= @course.course_name %></h4>
+      <%= f.hidden_field :course_id, value: @course.id%>
     </div>
   </div>
   <div class="form-group row">
-    <%= f.label :course, t("courses.index.course"), class: "col-lg-3 col-form-label form-control-label" %>
+    <%= f.label :lesson_videos, t(".video"), class: "col-lg-3 col-form-label form-control-label" %>
     <div class="col-lg-9">
-      <%= f.select :course_id, options_for_select(@list_courses,
-      selected: @lessons),
-      { }, { class: "form-control" } %>
+      <div class="row">
+        <div class="col-12 col-sm-7">
+          <% if @lessons.id == nil || @lessons.lesson_videos.empty? %>
+            <%= f.fields_for :lesson_videos do |s| %>
+              <%= s.select :video_id, options_for_select(@list_videos,
+                selected: @lessons.lesson_videos[0].video_id),
+                { }, { class: "form-control", id: "video_id"} %>
+            <% end %>
+          <% else %>
+            <%= f.fields_for :lesson_videos do |s| %>
+              <%= s.select :video_id, options_for_select(@list_videos,
+                selected: @lessons.lesson_videos[0].video_id),
+                { }, { class: "form-control", id: "video_id"} %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="col-12 col-sm-5">
+            <div id="video"></div>
+        </div>
+      </div>
     </div>
   </div>
+  <div class="form-group row">
+    <%= f.label :content, t("lessons.index.content"), class: "col-lg-12 col-form-label form-control-label" %>
+    <div class="col-lg-12">
+      <%= f.cktext_area :content, class: "someclass", ckeditor: {language: "vn"} %>
+    </div>
+  </div>
+
   <div class="form-group row">
     <label class="col-lg-3 col-form-label form-control-label"></label>
     <div class="col-lg-9">
-      <%= link_to t("cancel"), admin_lessons_path, class: "btn btn-secondary" %>
+      <%= link_to t("cancel"), admin_course_lessons_path, class: "btn btn-secondary" %>
       <%= f.button yield(:button_text), class: "btn btn-primary" %>
-    </div>
-  </div>
-  <div class="form-group row">
-    <%= f.label :lesson, t(".lesson"), class: "col-lg-3 col-form-label form-control-label" %>
-    <div class="col-lg-9">
-      <%= f.select :course_id, options_for_select(@list_courses,
-      selected: @lessons),
-      { }, { class: "form-control" } %>
     </div>
   </div>
 <% end %>

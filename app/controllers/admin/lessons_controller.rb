@@ -1,50 +1,50 @@
 class Admin::LessonsController < Admin::AdminBaseController
-  before_action :list_permissions, only: %i(new edit show index)
   before_action :load_lessons, only: %i(edit show update destroy)
+  before_action :load_course, except: :get_video
 
   def index
-    @lessons = Lesson.order_by.page(params[:page]).per Settings.user.record_page
+    @lessons = Lesson.order_desc.by_course_id(params[:course_id])
+      .page(params[:page]).per Settings.user.record_page
     @search = Lesson.search(params[:q])
     @lessons_q = @search.result(distinct: true)
   end
 
   def new
     @lessons = Lesson.new
-    @courses = Course.all
-    @list_courses = {}
-    @courses.each do |course|
-      @list_courses[course.course_name.to_s] = course.id
-    end
+    @lessons.lesson_videos << LessonVideo.new
+    select_option_videos @course.subject_id
   end
 
   def create
     @lessons = Lesson.new lessons_params
+    @lessons.user_id = current_user.id
     if @lessons.save
       flash[:success] = t "create_success"
-      redirect_to  admin_lessons_path
+      redirect_to  admin_course_lessons_path
     else
-      flash[:danger] = t "update_failed"
-      redirect_to new_admin_lesson_path
+      select_option_videos @course.subject_id
+      render :new
     end
   end
 
   def show
-    select_option_courses
   end
 
   def edit
-    select_option_courses
+    select_option_videos @course.subject_id
   end
 
   def update
     if @lessons.update lessons_params
       flash[:success] = t "updated_success"
-      redirect_to admin_lessons_path
+      redirect_to admin_course_lessons_path
     else
+      select_option_videos @course.subject_id
       flash[:danger] = t "update_failed"
       render :edit
     end
   end
+
 
   def destroy
     if @lessons.destroy
@@ -52,7 +52,14 @@ class Admin::LessonsController < Admin::AdminBaseController
     else
       flash[:danger] = t "deleted_failed"
     end
-    redirect_to admin_lessons_path
+    redirect_to admin_course_lessons_path
+  end
+
+  def get_video
+    video = Video.find_by id: params[:video_id]
+    respond_to do |format|
+      format.json { render :json => video }
+    end
   end
 
   def search
@@ -63,21 +70,31 @@ class Admin::LessonsController < Admin::AdminBaseController
   private
 
   def lessons_params
-    params.require(:lesson).permit :course_id, :title, :content
+    params.require(:lesson).permit :title, :content, :course_id,
+      lesson_videos_attributes: [:id, :video_id, :_destroy]
+  end
+
+  def select_option_videos subject_id
+    @videos = [Video.new]
+    @videos += Video.by_subject_id subject_id
+    @list_videos = {}
+    @list_videos[Video.new.name_video.to_s] = nil
+    @videos.each do |video|
+      @list_videos[video.name_video.to_s] = video.id
+    end
   end
 
   def load_lessons
     @lessons = Lesson.find_by id: params[:id]
     return if (@lessons)
     flash[:danger] = t "not_found"
-    render :index
+    redirect_to admin_course_lessons_path
   end
 
-  def select_option_courses
-    @courses = Course.all
-    @list_courses = {}
-    @courses.each do |courses|
-      @list_courses[courses.course_name.to_s] = courses.id
-    end
+  def load_course
+    @course = Course.find_by id: params[:course_id]
+    return if (@course)
+    flash[:danger] = t "not_found"
+    render :index
   end
 end

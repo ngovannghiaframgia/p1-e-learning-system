@@ -26,3 +26,4 @@
 //= require "vue.js"
 //= require "axios.min.js"
 //= require tooltip
+//= require init_ckeditor

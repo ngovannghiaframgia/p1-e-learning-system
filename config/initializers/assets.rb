@@ -13,5 +13,5 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 Rails.application.config.assets.precompile += %w( static_pages.css courses_users.js
-  admin/course.js course_show_register.js )
+  admin/course.js course_show_register.js admin/lesson.js )
 Rails.application.config.assets.precompile += %w[ckeditor/config.js]

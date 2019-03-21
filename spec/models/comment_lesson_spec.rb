@@ -10,7 +10,7 @@ RSpec.describe CommentLesson, type: :model do
     let!(:comment_a) { create :comment_lesson }
     let!(:comment_b) { create :comment_lesson }
     it "should return comment in the correct order" do
-      expect(CommentLesson.order_by) == [ comment_a, comment_b ]
+      expect(CommentLesson.order_desc) == [ comment_a, comment_b ]
     end
   end
 end

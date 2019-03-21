@@ -28,7 +28,7 @@
      <% if check_admin %>
       <% @permissions.each do |permission| %>
       <li class="menu-item-has-children">
-        <%= link_to permission.path do %>
+        <%= link_to permission.path, "data-turbolinks": false do %>
           <% if !permission.icon.nil? %>
             <%= permission.icon.html_safe %>
           <% end %>
@@ -45,8 +45,8 @@
     <% if check_student %>
       <% @permissions_user.each do |permission_user| %>
       <li class="menu-item-has-children">
-        <%= link_to permission_user.path do %>
-          <% if !permission_user.icon.nil? %>
+        <%= link_to permission_user.path, "data-turbolinks": false do %>
+          <% if permission_user.icon.present? %>
             <%= permission_user.icon.html_safe %>
           <% end %>
           <span class="margin-left-1em">

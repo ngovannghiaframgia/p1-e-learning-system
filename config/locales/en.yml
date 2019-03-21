@@ -32,6 +32,17 @@ en:
   edit: Edit
   delete: Delete
   active: Active
+  created_at: Created At
+  updated_at: Updated At
+  no_video: No Video
+  ckeditor:
+    page_title: 'CKEditor Files Manager'
+    confirm_delete: 'Delete file?'
+    buttons:
+      cancel: 'Cancel'
+      upload: 'Upload'
+      delete: 'Delete'
+      next: 'Next'
   layout:
     header:
       my_profile: My Profile
@@ -97,6 +108,9 @@ en:
         new_lessons: New Lessons
         edit_lessons: Edit
         show_lessons: Show Lessons
+        video: Video
+        update_lesson: Update Lesson
+        course: Course
   admin:
     users:
       index:
@@ -250,6 +264,15 @@ en:
         placeholder_description: Description . . .
         subject: Subject
         new_videos: New Videos
+    lessons:
+      index:
+        video: Video
+      new:
+        video: Video
+      show:
+        show_lesson: Show Lesson
+        video: Video
+        title: Title
   courses:
     index:
       list_of_class: List Of Course

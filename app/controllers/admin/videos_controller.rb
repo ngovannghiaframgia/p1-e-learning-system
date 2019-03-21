@@ -1,6 +1,5 @@
-class Admin::VideosController < ApplicationController
+class Admin::VideosController < Admin::AdminBaseController
   include Admin::VideosHelper, Admin::SubjectsHelper
-  before_action :list_permissions, only: %i(new edit show index)
   before_action :load_course, only: %i(edit show update destroy)
   before_action :admin_user
   before_action :select_option_subjects, except: %i(index show destroy)

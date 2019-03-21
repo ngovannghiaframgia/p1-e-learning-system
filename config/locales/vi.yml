@@ -31,6 +31,9 @@ vi:
   edit: Sửa
   delete: Xóa
   active: Kích Hoạt
+  created_at: Ngày Tạo
+  updated_at: Ngày Cập Nhật
+  no_video: Không Có Video
   layout:
     header:
       my_profile: Thông tin của tôi
@@ -94,6 +97,9 @@ vi:
       new_lessons: Thêm bài học mới
       edit_lessons: Cập nhật
       show_lessons: Thông tin bài học
+      video: Video
+      update_lesson: Cập Nhật Buổi Học
+      course: Khóa Học
   admin:
     users:
       index:
@@ -244,6 +250,15 @@ vi:
         placeholder_description: Mô Tả . . .
         subject: Môn Học
         new_videos: Thêm Mới Video
+    lessons:
+      index:
+        video: Video
+      new:
+        video: Video
+      show:
+        show_lesson: Chi Tiết Buổi Học
+        video: Video
+        title: Title
   courses:
     index:
       list_of_class: Danh Sách Các Khóa Học
