@@ -15,6 +15,13 @@ en:
   back: back
   create_success: Create Success
   create_failed: Create Failed
+  you_sure: You sure?
+  deleted_success: Deleted Success
+  deleted_failed: Deleted Failed
+  updated_success: Updated Success
+  update_failed: Update Failed
+  register_success: Register Success
+  register_failed: Register Failed
   layout:
     header:
       my_profile: My Profile
@@ -103,6 +110,8 @@ en:
         description: Description
         email: Email
     courses:
+      new:
+        new_courses: New Courses
       index:
         Class_information: Class information
         ifnormations: Informations
@@ -113,14 +122,42 @@ en:
         quantity: Quantity
         Tuition: Tuition
         Register: Register
+        new_courses: New Courses
+        courses_list: Course List
+        course_name: Course Name
+        start_time: Start Time
+        course_creator: Course Creator
+        belong_subject: Belong Subject
+        price: Price
+        quantity_registered: Quantity Student
       pagination:
         first: "« FIRST"
         last: "LAST »"
         previous: "‹ PREV"
         next: "NEXT ›"
         truncate: "…"
-        show:
-          email: Email
+      show:
+        email: Email
+        show_course: Show Course
+        course_name: Course Name
+        start_time: Start Time
+        subject: Subject
+        description: Description
+        price: Price
+        created_at: Created At
+        updated_at: Updated At
+      form:
+        new_courses: New Courses
+        course_name: Course Name
+        placeholder_course_name: Course Name . . .
+        start_time: Start Time
+        subject: Subject
+        description: Description
+        placeholder_description: Description . . .
+        price: Price
+        placeholder_price: Price . . .
+      edit:
+        edit_courses: Edit Courses
     subjects:
       subject_updated: Subject Updated
       update_failed: Update Failed
@@ -148,19 +185,23 @@ en:
         placeholder_name: Subject Name . . .
         description: Description
         placeholder_description: Description . . .
-    courses:
-      index:
-        new_courses: New Courses
-        courses_list: Course List
-        course_name: Course Name
-        start_time: Start Time
-        course_creator: Course Creator
-        belong_subject: Belong Subject
-        price: Price
-        quantity_registered: Quantity Student
-      new:
-      form:
-        new_courses: New Courses
-        course_name: Course Name
-        placeholder_course_name: Course Name . . .
-        subject: Subject
+  courses:
+    index:
+      list_of_class: List Of Course
+      course_information: Course Information
+      quantity_registered: Quantity Registered
+      price: Price
+      register: Register
+      informations: Informations
+      course: Course
+      table: Table
+      price: Price
+      subject: Subject
+      course_name: Course Name
+      start_time: Start Time
+      description: Description
+      created_at: Created At
+      updated_at: Updated At
+      details_course: Details Course
+      details: Details
+      close: Close

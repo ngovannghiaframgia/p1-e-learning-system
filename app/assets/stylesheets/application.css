@@ -11,6 +11,8 @@
  * It is generally better to create a new file per style scope.
  *
  *= require "bootstrap.min.css"
+ *= require "grayscale.min.css"
+ *= require "all.min.css"
  *= require "font-awesome"
  *= require "style.css"
  *= require "css.css"
@@ -22,7 +24,5 @@
  *= require "select2.min.css"
  *= require "main-sign.scss"
  *= require "util-signup.scss"
- *= require "grayscale.min.css"
- *= require "all.min.css"
  *= require_self
  */

@@ -1,0 +1,67 @@
+<% provide :title, t(".show_course") %>
+
+<div class="container py-3">
+  <div class="row">
+    <div class="mx-auto col-sm-6">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="mb-0"><%= t ".show_course" %></h4>
+        </div>
+        <div class="card-body">
+          <%= form_for @course, url: "#" do |f| %>
+            <div class="form-group row">
+              <%= f.label :course_name, t(".course_name"), class: "col-lg-3 col-form-label form-control-label"  %>
+              <div class="col-lg-9 padding-top-10">
+                <h4><%= @course.course_name %></h4>
+              </div>
+            </div>
+            <div class="form-group row">
+              <%= f.label :start_time, t(".start_time"), class: "col-lg-3 col-form-label form-control-label"  %>
+              <div class="col-lg-9 padding-top-10">
+                <h4><%= @course.start_time %></h4>
+              </div>
+            </div>
+            <div class="form-group row">
+              <%= f.label :description, t(".description"), class: "col-lg-3 col-form-label form-control-label" %>
+              <div class="col-lg-9 padding-top-10">
+                <h4><%= @course.description %></h4>
+              </div>
+            </div>
+            <div class="form-group row">
+              <%= f.label :price, t(".price"), class: "col-lg-3 col-form-label form-control-label" %>
+              <div class="col-lg-9 padding-top-10">
+                <h4 class="course-price"><%= @course.price %></h4>
+              </div>
+            </div>
+            <div class="form-group row">
+                <%= f.label :subject, t(".subject"), class: "col-lg-3 col-form-label form-control-label" %>
+                <div class="col-lg-9">
+                  <%= f.select :subject_id, options_for_select(@list_subjects,
+                  selected: @course),
+                  { }, { class: "form-control", disabled: "true" } %>
+                </div>
+              </div>
+            <div class="form-group row">
+              <%= f.label :created_at, t(".created_at"), class: "col-lg-3 col-form-label form-control-label" %>
+              <div class="col-lg-9 padding-top-10">
+                <h4><%= @course.created_at %></h4>
+              </div>
+            </div>
+            <div class="form-group row">
+              <%= f.label :updated_at, t(".updated_at"), class: "col-lg-3 col-form-label form-control-label" %>
+              <div class="col-lg-9 padding-top-10">
+                <h4><%= @course.updated_at %></h4>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-lg-3 col-form-label form-control-label"></label>
+              <div class="col-lg-9">
+                <%= link_to t("back"), admin_courses_path, class: "btn btn-secondary" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

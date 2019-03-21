@@ -49,7 +49,7 @@
                       <td><%= course.course_name %></td>
                       <td><%= course.user.email %></td>
                       <td><%= course.subject.name_subject %></td>
-                      <td><%= course.price %></td>
+                      <td class="course-price"><%= course.price %></td>
                       <td><%= course.description %></td>
                       <td><%= course.start_time %></td>
                       <td><%= course.quantity_registered %></td>
@@ -65,7 +65,7 @@
                           <% end %>
                         </div>
                         <div class="col-12">
-                          <%= link_to admin_course_path(course), method: :delete, data: {confirm: t(".you_sure")},
+                          <%= link_to admin_course_path(course), method: :delete, data: {confirm: t("you_sure")},
                             class: "btn btn-outline-danger btn-border-radius" do %>
                             <i class="fa fa-trash-o" aria-hidden="true"></i>
                           <% end %>

@@ -1,9 +1,16 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
-  before_action :set_locale
   layout :layout_by_resource
 
+  protect_from_forgery with: :exception
+  before_action :set_locale
+  helper_method :check_admin
+  before_action :authenticate_user!
+
   include SessionsHelper
+
+  def check_admin
+    !current_user.student?
+  end
 
   protected
   def after_sign_up_path_for(resource)
@@ -30,8 +37,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def admin_user
+    return unless current_user.student?
+    flash[:danger] = t "not_permission"
+    redirect_to root_url
+  end
+
   def list_permissions
-    @permissions = Permission.by_role_id User.roles[current_user.role]
+    @permissions = Permission.by_role_id User.roles[current_user.role] || []
     @path_home =
       if current_user.student?
         user_path current_user
