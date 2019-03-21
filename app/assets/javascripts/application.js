@@ -10,11 +10,10 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery3
+//= require jquery
 //= require jquery_ujs
 //= require "jquery.min.js"
 //= require "popper.min.js"
-//= require jquery
 //= require "bootstrap.bundle.min.js"
 //= require "jquery.easing.min.js"
 //= require rails-ujs
@@ -26,6 +25,4 @@
 //= require "map-custom.js"
 //= require "vue.js"
 //= require "axios.min.js"
-//= require app
-//= require course
-//= require_tree
+//= require tooltip
