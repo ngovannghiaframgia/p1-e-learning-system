@@ -16,3 +16,5 @@ course_user:
   page: 10
 lesson:
   page: 10
+video:
+  page: 10

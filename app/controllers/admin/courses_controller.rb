@@ -1,7 +1,9 @@
 class Admin::CoursesController < Admin::AdminBaseController
+  include Admin::SubjectsHelper
   before_action :list_permissions, only: %i(new edit show index)
   before_action :load_course, only: %i(edit show update destroy)
   before_action :admin_user
+  before_action :select_option_subjects, only: %i(new edit)
 
   def index
     @courses = Course.order_by.page(params[:page]).per Settings.user.record_page
@@ -9,11 +11,6 @@ class Admin::CoursesController < Admin::AdminBaseController
 
   def new
     @course = Course.new
-    @subjects = Subject.all
-    @list_subjects = {}
-    @subjects.each do |subject|
-      @list_subjects[subject.name_subject.to_s] = subject.id
-    end
   end
 
   def create
@@ -30,11 +27,9 @@ class Admin::CoursesController < Admin::AdminBaseController
   end
 
   def show
-    select_option_subjects
   end
 
   def edit
-    select_option_subjects
   end
 
   def update
@@ -44,6 +39,7 @@ class Admin::CoursesController < Admin::AdminBaseController
       redirect_to admin_courses_path
     else
       flash[:danger] = t "update_failed"
+      list_permissions
       render :edit
     end
   end
@@ -70,13 +66,4 @@ class Admin::CoursesController < Admin::AdminBaseController
     flash[:danger] = t "not_found"
     render :index
   end
-
-  def select_option_subjects
-    @subjects = Subject.all
-    @list_subjects = {}
-    @subjects.each do |subject|
-      @list_subjects[subject.name_subject.to_s] = subject.id
-    end
-  end
-
 end
