@@ -8,5 +8,6 @@ class Video < ApplicationRecord
   validates :lesson_number, presence: true
 
   scope :order_asc, -> {order id: :asc }
+  scope :order_desc, -> {order id: :desc }
   scope :by_subject_id, -> (subject_id){where subject_id: subject_id }
 end

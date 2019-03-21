@@ -36,6 +36,8 @@ en:
   created_at: Created At
   updated_at: Updated At
   no_video: No Video
+  submit_homework: Submit Homework
+  homeworks: Homeworks
   ckeditor:
     page_title: 'CKEditor Files Manager'
     confirm_delete: 'Delete file?'
@@ -280,6 +282,7 @@ en:
     exercises_list: Exercises list
     subject: Subjects
     placeholder_question: Question . . .
+    edit_exercises: Edit Exercises
   courses:
     index:
       list_of_class: List Of Course
@@ -305,3 +308,16 @@ en:
       list_lesson_of_course: List Lesson Of Course
       not_yet_confirmed: Not Yet Confirmed
       title: Title
+  homework:
+    show:
+      homework: Homework
+      total_correct: Total number of correct sentences
+      total_false: Total number of false sentences
+      reward_points: Reward Points
+      name_homework: Name Homework
+      lesson_number: Lesson Number
+      placeholder_name_homework: Name Homework . . .
+      placeholder_lesson_number: Lesson Number . . .
+      exercises: Exercises
+      list_exercised: "List Exercised :"
+      exercises: Exercises

@@ -30,6 +30,7 @@
                   <tr>
                     <th scope="col"><%= t "number" %></th>
                     <th scope="col"><%= t ".title" %></th>
+                    <th scope="col"><%= t "lessons.index.video" %></th>
                     <th scope="col"><%= t "act" %></th>
                   </tr>
                 </thead>
@@ -39,11 +40,18 @@
                       <th scope="row"><%= index+1 %></th>
                       <td><%= lesson.title %></td>
                       <td>
-                        <%= link_to  "#", "data-tooltip" =>"Details Lesson",
+                        <% if lesson.lesson_videos[0].nil? %>
+                          <%= t "no_video" %>
+                        <% else %>
+                          <%= lesson.lesson_videos[0].video.link.html_safe %>
+                        <% end %>
+                      </td>
+                      <td>
+                        <%= link_to  lesson_path(lesson), "data-tooltip" =>"Details Lesson",
                           class: "btn btn-outline-info btn-border-radius" do %>
                           <i class="fa fa-book" aria-hidden="true"></i>
                         <% end %>
-                        <%= link_to  "#", "data-tooltip" => "Homework",
+                        <%= link_to  homework_path(lesson), "data-tooltip" => "Homework",
                           class: "btn btn-outline-success btn-border-radius" do %>
                           <i class="fa fa-pencil-square" aria-hidden="true"></i>
                         <% end %>

@@ -20,7 +20,7 @@ class CoursesUsersController < ApplicationController
   def show
     user_course = CourseUser.find_by(user_id: current_user.id, course_id: params[:id])
     if user_course.activated?
-      @lessons = Lesson.by_course_id(params[:id]).page(params[:page]).per Settings.course_user.page
+      @lessons = Lesson.order_desc.by_course_id(params[:id]).page(params[:page]).per Settings.course_user.page
     else
       redirect_to courses_path
       flash[:danger] = t ".not_yet_confirmed"

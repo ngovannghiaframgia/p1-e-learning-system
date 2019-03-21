@@ -1,0 +1,32 @@
+<% @list_homework_result.each_with_index do |homework_result, index| %>
+<div class="card">
+  <h4>Câu <%= index + 1%> : <%= homework_result.homeworks_detail.exercise.question  %></h4>
+  <% homework_result.homeworks_detail.exercise.exercises_answer.each_with_index do |exercise_answer, i|  %>
+    <h5>
+      <% if exercise_answer.id == homework_result.exercises_answer_id %>
+        <input type="radio" checked="checked" disabled="disabled">
+      <% else %>
+        <input type="radio" disabled="disabled">
+      <% end %>
+      <% if exercise_answer.true? %>
+        <b class="color-red"><%= exercise_answer.content %></b>
+      <% else %>
+        <%= exercise_answer.content %>
+      <% end %>
+    </h5>
+  <% end %>
+</div>
+<% end %>
+
+<div class="row margin-bottom-2em">
+  <div class="col-3">
+    <%= t(".total_correct")  %> : <%= @total_homework_result.total_true %>
+  </div>
+  <div class="col-3">
+    <%= t(".total_false")%> : <%= @total_homework_result.total_false %>
+  </div>
+  <div class="col-3">
+    <%= t(".reward_points")%> : <%= @total_homework_result.reward_points %>
+  </div>
+</div>
+<%= link_to t("back"), courses_user_path(@lesson.course.id), class: "btn btn-secondary" %>

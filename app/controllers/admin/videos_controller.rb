@@ -5,7 +5,7 @@ class Admin::VideosController < Admin::AdminBaseController
   before_action :select_option_subjects, except: %i(index show destroy)
 
   def index
-    @videos = Video.order_asc.page(params[:page]).per Settings.video.page
+    @videos = Video.order_desc.page(params[:page]).per Settings.video.page
   end
 
   def new

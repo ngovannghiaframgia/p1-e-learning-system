@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :courses, dependent: :destroy
   has_many :videos, dependent: :destroy
   has_many :homework_results, dependent: :destroy
+  has_many :total_homework_result, dependent: :destroy
 
   before_save :downcase_email
 

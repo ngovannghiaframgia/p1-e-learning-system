@@ -1,13 +1,74 @@
 <% provide(:title, current_user.fullname) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= current_user.fullname %>
-      </h1>
-    </section>
-  </aside>
-  <div class="col-md-8">
 
+<div class="container py-3">
+  <div class="row">
+    <div class="mx-auto col-sm-6">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="mb-0"><%= current_user.email %></h4>
+        </div>
+        <div class="card-body">
+          <%= form_with model: @user, local: true do |f| %>
+            <%= render "shared/error_messages", object: f.object %>
+            <div class="form-group row">
+              <%= f.label :fullname, t(".fullname"), class: "col-lg-3 col-form-label form-control-label"  %>
+              <div class="col-lg-9">
+                <%= f.text_field :fullname, class: "form-control" %>
+              </div>
+            </div>
+            <div class="form-group row">
+              <%= f.label :email, t(".email"), class: "col-lg-3 col-form-label form-control-label"  %>
+              <div class="col-lg-9">
+                <div class= "form-control">
+                    <%= @user.email %>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <%= f.label :birth, t(".birth"), class: "col-lg-3 col-form-label form-control-label"  %>
+              <div class="col-lg-9">
+                <%= f.date_field :birth, class: "form-control" %>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <%= f.label :address, t(".address"), class: "col-lg-3 col-form-label form-control-label"  %>
+              <div class="col-lg-9">
+                <%= f.text_field :address, class: "form-control" %>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <%= f.label :numberphone, t(".numberphone"), class: "col-lg-3 col-form-label form-control-label"  %>
+              <div class="col-lg-9">
+                <%= f.number_field :numberphone, class: "form-control" %>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <%= f.label :password, t(".password"), class: "col-lg-3 col-form-label form-control-label"  %>
+              <div class="col-lg-9">
+                <%= f.password_field :password, class: "form-control" %>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <%= f.label :password_confirmation, t(".password_confirmation"), class: "col-lg-3 col-form-label form-control-label"  %>
+              <div class="col-lg-9">
+                <%= f.password_field :password_confirmation, class: "form-control" %>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-lg-9">
+                <%= link_to t("cancel"), dashboard_index_path, class: "btn btn-secondary" %>
+                <%= f.button t("save"), class: "btn btn-primary" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

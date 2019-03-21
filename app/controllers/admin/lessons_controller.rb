@@ -19,6 +19,8 @@ class Admin::LessonsController < Admin::AdminBaseController
     @lessons = Lesson.new lessons_params
     @lessons.user_id = current_user.id
     if @lessons.save
+      @lesson_video = LessonVideo.new lesson_id: @lessons.id, video_id: params[:lesson][:lesson_videos]
+      @lesson_video.save
       flash[:success] = t "create_success"
       redirect_to  admin_course_lessons_path
     else
