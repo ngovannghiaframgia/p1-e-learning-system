@@ -1,0 +1,40 @@
+en:
+  Welcome: Xin Chào
+  login: Đăng nhập
+  signup: Đăng ký
+  devise:
+    confirmations:
+      resend_confirm: Gửi lại hướng dẫn xác nhận
+    mailer:
+      confirm_your_account: Bạn có thể xác nhận email tài khoản của bạn thông qua liên kết dưới đây
+      confirm_my_account: Xác nhận tài khoản của tôi
+      contacting_you_to_notify: Chúng tôi đang liên hệ với bạn để thông báo cho bạn rằng email của bạn đang được thay đổi thành
+      requested_a_link_to_change_your_password: Ai đó đã yêu cầu một liên kết để thay đổi mật khẩu của bạn. Bạn có thể làm điều này thông qua liên kết dưới đây.
+      change_my_password: Thay đổi mật khẩu
+      click_the_link: Nhấp vào liên kết dưới đây để mở khóa tài khoản của bạn
+      unlock_my_account: Mở khóa tài khoản
+      account_has_been_locked: Tài khoản của bạn đã bị khóa do số lần đăng nhập không thành công quá nhiều.
+      ignore_this_email: Nếu bạn không yêu cầu điều này, xin vui lòng bỏ qua email này.
+      password_will_not_change_until: Mật khẩu của bạn sẽ không thay đổi cho đến khi bạn truy cập vào liên kết ở trên và tạo một mật khẩu mới.
+    passwords:
+      change_your_password: Thay đổi mật khẩu của bạn
+      new_password: Mật khẩu mới
+      confirm_new_password: Xác nhận mật khẩu mới
+      change_my_password: Thay đổi mật khẩu của tôi
+      forgot_your_password: Quên mật khẩu?
+      send_me_reset_password: Gửi cho tôi hướng dẫn đặt lại mật khẩu
+    registrations:
+      Currently_waiting_confirmation: Hiện đang chờ xác nhận cho
+      edit: Sửa
+      leave_blank_if: (để trống nếu bạn không muốn thay đổi nó)
+      we_need_your_current_password: (chúng tôi cần mật khẩu hiện tại của bạn để xác nhận thay đổi của bạn)
+      Update: Cập nhật
+      Are_you_sure: Bạn có chắn chắn?
+      Cancel_my_account: Hủy tài khoản của tôi
+      unhappy: Không vui
+      signed_up_but_unconfirmed: Để hoàn tất việc đăng ký vui lòng xác nhận tài khoản trong email của bạn!
+    share:
+      Did_not_receive_confirmation: Không nhận được hướng dẫn xác nhận?
+      Did_not_receive_unlock: Không nhận được hướng dẫn xác nhận mở khóa?
+    unlocks:
+      Resend_unlock_instructions: Gửi lại hướng dẫn mở khóa

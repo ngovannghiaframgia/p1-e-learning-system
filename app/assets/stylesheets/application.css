@@ -11,16 +11,18 @@
  * It is generally better to create a new file per style scope.
  *
  *= require "bootstrap.min.css"
- *= require font-awesome
+ *= require "font-awesome"
  *= require "style.css"
  *= require "css.css"
- *= require customs.scss
+ *= require "customs.scss"
  *= require "animate.css"
  *= require "animsition.min.css"
  *= require "daterangepicker.css"
  *= require "hamburgers.min.css"
  *= require "select2.min.css"
- *= require main-sign.scss
- *= require util-signup.scss
+ *= require "main-sign.scss"
+ *= require "util-signup.scss"
+ *= require "grayscale.min.css"
+ *= require "all.min.css"
  *= require_self
  */
