@@ -26,6 +26,8 @@ gem "jquery-rails"
 gem "factory_bot"
 gem "rails-controller-testing"
 gem "cancancan", "~> 2.0"
+gem "devise"
+gem "devise-encryptable"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

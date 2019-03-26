@@ -1,6 +1,5 @@
 class Admin::CoursesController < Admin::AdminBaseController
   before_action :load_subject, only: %i(edit show update destroy)
-  before_action :logged_in_user, except: %i(show)
 
   def index
     @courses = Course.order_by.page(params[:page]).per Settings.user.record_page

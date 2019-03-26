@@ -1,16 +1,13 @@
 Rails.application.routes.draw do
-  root "sessions#new"
-  get "/home", to: "static_pages#home"
-  get "/contact", to: "static_pages#contact"
-  get "/signup", to: "users#new"
-  get "/login", to: "sessions#new"
-  post "/login", to: "sessions#create"
-  delete "/logout", to: "sessions#destroy"
-  resources :users
+  root "home#index"
+  devise_for :users, path: "", path_names: {
+    sign_in: "login", sign_out: "logout", password: "secret",
+    confirmation: "verification", unlock: "unblock",
+    registration: "register", sign_up: "cmon_let_me_in"
+  }
+  resources :courses
+
   namespace :admin do
-    resources :users
-    resources :subjects
     resources :courses
   end
-  resources :courses
 end

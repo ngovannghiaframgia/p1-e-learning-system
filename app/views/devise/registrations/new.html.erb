@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% provide :title, t("Signup") %>
+</head>
+
+<body>
+  <div class="container">
+    <div class="d-flex justify-content-center h-100">
+      <div class="card">
+        <div class="card-header">
+          <h3><%= t "static_pages.login.Sign_up" %></h3>
+          <div class="d-flex justify-content-end social_icon">
+            <span><i class="fa fa-facebook-square"></i></span>
+            <span><i class="fa fa-google-plus-square"></i></span>
+            <span><i class="fa fa-twitter-square"></i></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <%= f.label :email, :class => "input-group-text" do %>
+                <i class="fa fa-user"></i>
+                <% end %>
+              </div>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email",
+                                  class: "form-control", placeholder: "Email" %>
+            </div>
+            <% if @minimum_password_length %>
+            <em style="color:white;">(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <%= f.label :password, :class => "input-group-text" do %>
+                <i class="fa fa-key"></i>
+                <% end %>
+              </div>
+              <%= f.password_field :password, autocomplete: "new-password",
+                                      class: "form-control", placeholder: t("sessions.new.password") %>
+            </div>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <%= f.label :password_confirmation, :class => "input-group-text" do %>
+                <i class="fa fa-check"></i>
+                <% end %>
+              </div>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password",
+                                    class: "form-control", placeholder: t("sessions.new.passwordconf") %>
+            </div>
+            <div class="form-group">
+              <%= f.submit t("layouts.sigup.sign_up"), class: "btn float-right login_btn" %>
+            </div>
+          <% end %>
+        </div>
+        <div class="card-footer">
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

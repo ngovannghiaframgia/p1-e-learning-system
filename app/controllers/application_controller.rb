@@ -1,8 +1,22 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_locale
+  layout :layout_by_resource
 
   include SessionsHelper
+
+  protected
+  def after_sign_up_path_for(resource)
+    return new_user_session_path
+  end
+
+  def after_sign_in_path_for(resource)
+    if resource.student?
+      courses_path
+    else resource.admin?
+      admin_courses_path
+    end
+  end
 
   private
   def set_locale
@@ -10,17 +24,10 @@ class ApplicationController < ActionController::Base
     I18n.locale = I18n.available_locales.include?(locale) ? locale : I18n.default_locale
   end
 
-  def logged_in_user
-    return if logged_in?
-    store_location
-    flash[:danger] = t "users.please_log_in"
-    redirect_to login_url
-  end
-
-  def admin_user
-    return unless current_user.student?
-    flash[:danger] = t "not_permission"
-    redirect_to root_url
+  def layout_by_resource
+    if devise_controller?
+      new_user_session_path
+    end
   end
 
   def list_permissions

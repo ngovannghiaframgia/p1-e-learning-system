@@ -1,0 +1,61 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% provide :title, t("devise.passwords.change_your_password") %>
+</head>
+
+<body>
+  <div class="container">
+    <div class="d-flex justify-content-center h-100">
+      <div class="card">
+        <div class="card-header">
+          <h3><%= t("devise.passwords.change_your_password") %></h3>
+          <div class="d-flex justify-content-end social_icon">
+            <span><i class="fa fa-facebook-square"></i></span>
+            <span><i class="fa fa-google-plus-square"></i></span>
+            <span><i class="fa fa-twitter-square"></i></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+            <%= f.hidden_field :reset_password_token %>
+            <% if @minimum_password_length %>
+                <em style="color:white">(<%= @minimum_password_length %> characters minimum)</em><br />
+            <% end %>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <%= f.label :password, t("devise.passwords.new_password"), :class => "input-group-text" do %>
+                <i class="fa fa-key"></i>
+                <% end %>
+              </div>
+              <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: "form-control",
+                                    placeholder: t("devise.passwords.new_password") %>
+              <br />
+            </div>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <%= f.label :password_confirmation, t("devise.passwords.confirm_new_password"), :class => "input-group-text" do  %><br />
+                <i class="fa fa-key"></i>
+                <% end %>
+              </div>
+              <%= f.password_field :password_confirmation, autocomplete: "off",  class: "form-control",
+                                      placeholder: t("devise.passwords.confirm_new_password") %>
+            </div>
+            <div class="form-group">
+              <%= f.submit t("devise.passwords.change_my_password") %>
+            </div>
+          <% end %>
+        </div>
+        <div class="card-footer">
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,3 @@
+<p><%= t("Welcome") %> <%= @email %>!</p>
+<p><%= t("devise.mailer.confirm_your_account") %></p>
+<p><%= link_to t("devise.mailer.confirm_my_account"), confirmation_url(@resource, confirmation_token: @token) %></p>

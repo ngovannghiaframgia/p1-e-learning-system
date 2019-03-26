@@ -1,5 +1,9 @@
 class User < ApplicationRecord
   enum role: {student: 0, admin: 1, supperadmin: 2}
+  devise :database_authenticatable, :encryptable, :registerable,
+          :recoverable, :rememberable, :trackable, :validatable,
+          :confirmable, :lockable, :timeoutable
+
   has_many :course_users, dependent: :destroy
   has_many :courses, dependent: :destroy
   has_many :videos, dependent: :destroy
@@ -7,12 +11,10 @@ class User < ApplicationRecord
 
   before_save :downcase_email
 
-  validates :fullname, presence: true, length: {maximum: Settings.user.max_name}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: {maximum: Settings.user.max_email},
     format: {with: VALID_EMAIL_REGEX},
     uniqueness: {case_sensitive: false}
-  has_secure_password
   validates :password, presence: true, length: {minimum: Settings.user.min_password}, allow_nil: true
 
   scope :order_asc, -> {order id: :asc }
