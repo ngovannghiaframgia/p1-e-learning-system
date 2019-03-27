@@ -2,7 +2,7 @@ class User < ApplicationRecord
   enum role: {student: 0, admin: 1, supperadmin: 2}
   devise :database_authenticatable, :encryptable, :registerable,
           :recoverable, :rememberable, :trackable, :validatable,
-          :confirmable, :lockable, :timeoutable
+          :lockable, :timeoutable
 
   has_many :course_users, dependent: :destroy
   has_many :courses, dependent: :destroy

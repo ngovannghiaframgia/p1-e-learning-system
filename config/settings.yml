@@ -7,7 +7,6 @@ user:
   time_token: 2
 courses:
   max_name: 50
-  quantity: 2
-  page: 1
+  page: 10
 subject:
   max_name: 50

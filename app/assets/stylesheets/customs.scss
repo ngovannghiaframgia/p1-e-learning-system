@@ -8,3 +8,24 @@
 .btn-border-radius {
   border-radius: 20%;
 }
+
+.margin-left-1em {
+  margin-left: 1em;
+}
+
+.padding-0 {
+  padding: 0;
+}
+
+.btn-login{
+  -webkit-box-shadow:0 .1875rem .1875rem 0 rgba(0,0,0,.1)!important;
+  box-shadow:0 .1875rem .1875rem 0 rgba(0,0,0,.1)!important;
+  padding:1.25rem 2rem;font-family:'Varela Round';
+  font-size:80%;text-transform:uppercase;
+  letter-spacing:.15rem;border:0
+}
+
+.btn-primary-login{background-color:#64a19d}
+.btn-primary-login:hover{background-color:#4f837f}
+.btn-primary-login:focus{background-color:#4f837f;color:#fff}
+.btn-primary-login:active{background-color:#467370!important}

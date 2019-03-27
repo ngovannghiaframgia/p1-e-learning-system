@@ -1,10 +1,13 @@
 class UsersController < ApplicationController
   layout "signup", only: %i(create new)
 
-  before_action :load_user, :logged_in_user, except: %i(new create)
+  before_action :list_permissions, only: %i(edit show index)
+
+  load_and_authorize_resource except: %i(new create)
+
+  before_action :load_user, except: %i(new create)
   before_action :admin_user, only: %i(index show)
   before_action :correct_user, only: %i(show edit)
-  load_and_authorize_resource
 
   def index
   end

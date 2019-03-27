@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_02_24_061805) do
   end
 
   create_table "course_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.boolean "status"
+    t.boolean "status", default: false, null: false
     t.decimal "debit", precision: 10
     t.bigint "user_id"
     t.bigint "course_id"
@@ -41,10 +41,10 @@ ActiveRecord::Schema.define(version: 2019_02_24_061805) do
     t.bigint "subject_id"
     t.bigint "user_id"
     t.string "course_name"
-    t.integer "quantity_registered"
+    t.integer "quantity_registered", default: 0
     t.date "start_time"
-    t.string "description"
-    t.decimal "price", precision: 20, scale: 2
+    t.text "description"
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subject_id", "created_at"], name: "index_courses_on_subject_id_and_created_at"
@@ -146,7 +146,7 @@ ActiveRecord::Schema.define(version: 2019_02_24_061805) do
 
   create_table "subjects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name_subject"
-    t.string "description"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -170,17 +170,12 @@ ActiveRecord::Schema.define(version: 2019_02_24_061805) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email"
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_salt"
-    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
@@ -190,7 +185,7 @@ ActiveRecord::Schema.define(version: 2019_02_24_061805) do
     t.string "name_video"
     t.string "link"
     t.integer "lesson_number"
-    t.string "description"
+    t.text "description"
     t.bigint "subject_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false

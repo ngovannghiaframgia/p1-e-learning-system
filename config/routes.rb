@@ -5,9 +5,13 @@ Rails.application.routes.draw do
     confirmation: "verification", unlock: "unblock",
     registration: "register", sign_up: "cmon_let_me_in"
   }
-  resources :courses
 
+  resources :users
   namespace :admin do
+    resources :users
+    resources :subjects
     resources :courses
   end
+  resources :courses
+  resources :courses_users
 end

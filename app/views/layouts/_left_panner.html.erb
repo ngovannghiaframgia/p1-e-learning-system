@@ -24,6 +24,20 @@
       <%= t "layout.panner.Class_Classification" %>
     </h3>
 
+     <!-- Loa list permission -->
+     <% if check_admin %>
+      <% @permissions.each do |permission| %>
+      <li class="menu-item-has-children">
+        <%= link_to permission.path do %>
+          <%= permission.icon.html_safe %>
+          <span class="margin-left-1em">
+            <%= permission.name_permission %>
+          </span>
+        <% end %>
+      </li>
+      <% end %>
+     <% end %>
+
     <h3 class="menu-title"><%= t "layout.panner.Class" %></h3>
 
     <h3 class="menu-title"><%= t "layout.panner.Other" %></h3>

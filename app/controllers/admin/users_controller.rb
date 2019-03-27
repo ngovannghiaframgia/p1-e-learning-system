@@ -1,6 +1,6 @@
 class Admin::UsersController < Admin::AdminBaseController
+  before_action :list_permissions, only: %i(new edit show index)
   before_action :load_user, except: %i(index)
-  before_action :logged_in_user, except: %i(show)
   before_action :admin_user, except: %i(index)
   load_and_authorize_resource
 

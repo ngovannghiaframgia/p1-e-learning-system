@@ -14,6 +14,13 @@ vi:
   back: quay lại
   create_success: Tạo Thành Công
   create_failed: Tạo Thất Bại
+  you_sure: Bạn chắc chắn?
+  deleted_success: Xóa Thành Công
+  deleted_failed: Xóa Thất Bại
+  updated_success: Cập Nhật Thành Công
+  update_failed: Cập Nhật Thất Bại
+  register_success: Đăng Ký Thành Công
+  register_failed: Đăng Ký Thất Bại
   layout:
     header:
       my_profile: Thông tin của tôi
@@ -97,6 +104,8 @@ vi:
         gender: Giới Tính
         email: Email
     courses:
+      new:
+        new_courses: New Courses
       index:
         Class_information: "Thông tin lớp học"
         ifnormations: Thông tin
@@ -107,14 +116,42 @@ vi:
         quantity: Số Lượng
         Tuition: Học Phí
         Register: Đăng ký
+        new_courses: Tạo Mới Khóa Học
+        courses_list: Danh Sách Khóa Học
+        course_name: Tên Khóa Học
+        start_time: Ngày Bắt Đầu
+        course_creator: Người Tạo Khóa Học
+        belong_subject: Thuộc Môn Học
+        price: Giá
+        quantity_registered: Số Lượng Đã Đăng Ký
       pagination:
         first: "« TRƯỚC"
         last: "SAU»"
         previous: "‹ QUAY LẠI"
         next: "TIẾP THEO ›"
         truncate: "…"
-        show:
-          email: Email
+      show:
+        email: Email
+        show_course: Thông Tin Khóa Học
+        course_name: Tên Khóa Học
+        start_time: Ngày Bắt Đầu
+        subject: Môn Học
+        description: Mô Tả
+        price: Giá
+        created_at: Ngày Tạo
+        updated_at: Ngày Cập Nhật
+      form:
+        new_courses: Tạo Mới Khóa Học
+        course_name: Tên Khóa Học
+        placeholder_course_name: Tên Khóa Học . . .
+        start_time: Ngày Bắt Đầu
+        subject: Môn Học
+        description: Mô Tả
+        placeholder_description: Mô Tả . . .
+        price: Giá
+        placeholder_price: Giá . . .
+      edit:
+        edit_courses: Edit Courses
     subjects:
       subject_updated: Đã Cập Nhật Môn Học
       update_failed: Cập Nhật Thất Bại
@@ -142,19 +179,23 @@ vi:
         placeholder_name: Tên Lớp . . .
         description: Mô Tả
         placeholder_description: Mô Tả . . .
-    courses:
-      index:
-        new_courses: Tạo Mới Khóa Học
-        courses_list: Danh Sách Khóa Học
-        course_name: Tên Khóa Học
-        start_time: Ngày Bắt Đầu
-        course_creator: Người Tạo Khóa Học
-        belong_subject: Thuộc Môn Học
-        price: Giá
-        quantity_registered: Số Lượng Đã Đăng Ký
-      new:
-      form:
-        new_courses: Tạo Mới Khóa Học
-        course_name: Tên Khóa Học
-        placeholder_course_name: Tên Khóa Học . . .
-        subject: Môn Học
+  courses:
+    index:
+      list_of_class: Danh Sách Các Khóa Học
+      course_information: Thông Tin Khóa Học
+      quantity_registered: Số Lượng Đã Đăng Ký
+      price: Giá
+      register: Đăng Ký
+      informations: Những Thông Tin
+      course: Khóa Học
+      table: Bảng
+      price: Giá
+      subject: Môn Học
+      course_name: Tên Khóa Học
+      start_time: Thời Gian Bắt Đầu
+      description: Mô Tả
+      created_at: Ngày Tạo
+      updated_at: Ngày Cập Nhật
+      details_course: Chi Tiết Khóa Học
+      details: Chi Tiết
+      close: Hủy
