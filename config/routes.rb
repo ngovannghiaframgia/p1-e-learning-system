@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "home#index"
+  root "admin/lessons#index"
   devise_for :users, path: "", path_names: {
     sign_in: "login", sign_out: "logout", password: "secret",
     confirmation: "verification", unlock: "unblock",
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :users
     resources :subjects
     resources :courses
+    resources :lessons
   end
   resources :courses
   resources :courses_users

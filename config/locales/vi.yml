@@ -70,6 +70,18 @@ vi:
     sigup:
       full_name: Tên Đầy Đủ
       sign_up: Đăng Ký
+  lessons:
+    index:
+      lessons_list: Danh sach bài học
+      title: Tên bài học
+      content: Nội dung
+      acction: Hành động
+      summary: Tóm tắt lý thuyết
+      lessons: Bài học
+      theory: Lý thuyết
+      information: Thông tin
+      table: Bảng
+      new_lessons: Thêm bài học mới
   admin:
     users:
       index:
