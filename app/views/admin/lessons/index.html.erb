@@ -9,7 +9,7 @@
     </div>
     <div class="col-sm-8">
       <div class="page-header float-left">
-        <div class="page-title search_fr row">
+        <div class="page-title search-fr row">
           <%= search_form_for @search, url: admin_lessons_path do |f| %>
             <div class="col-sm-9">
               <%= f.text_field :content, class: "form-control", placeholder: "Enter search term" %>
@@ -51,18 +51,20 @@
                       <td><%= lesson.course.course_name %></td>
                       <td>
                         <div class="icon-btn">
-                          <%= link_to  admin_lesson_path(lesson), class: "btn btn-outline-primary btn-border-radius" do %>
+                          <%= link_to  admin_lesson_path(lesson), "data-tooltip" => t("details"),
+                                   class: "btn btn-outline-primary btn-border-radius" do %>
                             <i class="fa fa-info-circle" aria-hidden="true"></i>
                           <% end %>
                         </div>
                         <div class="icon-btn">
-                          <%= link_to  edit_admin_lesson_path(lesson), class: "btn btn-outline-info btn-border-radius" do %>
+                          <%= link_to  edit_admin_lesson_path(lesson), "data-tooltip" => t("edit"),
+                                 class: "btn btn-outline-info btn-border-radius" do %>
                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                           <% end %>
                         </div>
                         <div class="icon-btn">
-                          <%= link_to admin_lesson_path(lesson), method: :delete, data: {confirm: t(".you_sure")},
-                              class: "btn btn-outline-danger btn-border-radius" do %>
+                          <%= link_to admin_lesson_path(lesson), method: :delete, data: {confirm: t("you_sure_delete")},
+                              class: "btn btn-outline-danger btn-border-radius", "data-tooltip" => t("delete") do %>
                             <i class="fa fa-trash-o" aria-hidden="true"></i>
                           <% end %>
                         </div>

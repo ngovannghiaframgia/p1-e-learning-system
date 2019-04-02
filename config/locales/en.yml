@@ -95,6 +95,8 @@ en:
         information: Information
         table: Table
         new_lessons: New Lessons
+        edit_lessons: Edit
+        show_lessons: Show Lessons
   admin:
     users:
       index:
