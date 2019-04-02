@@ -20,4 +20,12 @@
       <%= f.button yield(:button_text), class: "btn btn-primary" %>
     </div>
   </div>
+  <div class="form-group row">
+    <%= f.label :lesson, t(".lesson"), class: "col-lg-3 col-form-label form-control-label" %>
+    <div class="col-lg-9">
+      <%= f.select :course_id, options_for_select(@list_courses,
+      selected: @lessons),
+      { }, { class: "form-control" } %>
+    </div>
+  </div>
 <% end %>

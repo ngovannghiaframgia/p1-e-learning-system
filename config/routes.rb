@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "admin/lessons#index"
+  root "home#index"
   devise_for :users, path: "", path_names: {
     sign_in: "login", sign_out: "logout", password: "secret",
     confirmation: "verification", unlock: "unblock",
