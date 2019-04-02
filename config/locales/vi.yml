@@ -92,6 +92,8 @@ vi:
       information: Thông tin
       table: Bảng
       new_lessons: Thêm bài học mới
+      edit_lessons: Cập nhật
+      show_lessons: Thông tin bài học
   admin:
     users:
       index:
