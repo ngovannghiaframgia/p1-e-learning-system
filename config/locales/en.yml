@@ -7,7 +7,7 @@ en:
   female: Female
   other_gender: Other gender
   select_gender: Select gender
-  numbers: Number
+  number: Number
   cancel: Cancel
   save: Save
   update: Update
@@ -216,6 +216,40 @@ en:
       created_at: Created At
       act: Act
       list_wait_registed: List Wait Registed
+    videos:
+      index:
+        videos_list: Videos List
+        new_videos: New Videos
+        name_video: Video Name
+        link: Link
+        lesson_number: Lesson Number
+        description: Description
+        subject: Subject
+        video: Video
+      new:
+        new_videos: New Videos
+      show:
+        show_video: Show Video
+        name_video: Video Name
+        link: Link
+        lesson_number: Lesson Number
+        description: Description
+        subject: Subject
+        creator: Creator
+        video: Video
+      edit:
+        edit_video: Edit Video
+      form:
+        name_video: Video Name
+        placeholder_name_video: Video Name . . .
+        link: Link
+        placeholder_link: Link . . .
+        lesson_number: Lesson Number
+        placeholder_lesson_number: Lesson Number . . .
+        description: Description
+        placeholder_description: Description . . .
+        subject: Subject
+        new_videos: New Videos
   courses:
     index:
       list_of_class: List Of Course

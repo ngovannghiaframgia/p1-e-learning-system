@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :courses
     resources :lessons
     resources :courses_users
+    resources :videos
   end
   resources :courses
   resources :courses_users

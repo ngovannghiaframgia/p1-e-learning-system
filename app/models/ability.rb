@@ -23,6 +23,7 @@ class Ability
 
     can %i(show), Admin::UsersController
 
+    can :manage, Video
   end
 
   def role_supperadmin

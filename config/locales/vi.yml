@@ -210,6 +210,40 @@ vi:
       created_at: Ngày Tạo
       act: Hành Động
       list_wait_registed: Danh Sách Chờ Đăng Ký
+    videos:
+      index:
+        videos_list: Danh Sách Video
+        new_videos: Thêm Mới Video
+        name_video: Tên Video
+        link: Liên Kết
+        lesson_number: Số Bài Học
+        description: Mô Tả
+        subject: Môn Học
+        video: Video
+      new:
+        new_videos: Thêm Mới Video
+      show:
+        show_video: Chi Tiết Video
+        name_video: Tên Video
+        link: Liên Kết
+        lesson_number: Số Bài Học
+        description: Mô Tả
+        subject: Môn Học
+        creator: Người Tạo
+        video: Video
+      edit:
+        edit_video: Sửa Video
+      form:
+        name_video: Tên Video
+        placeholder_name_video: Tên Video . . .
+        link: Liên Kết
+        placeholder_link: Liên Kết . . .
+        lesson_number: Số Bài Học
+        placeholder_lesson_number: Số Bài Học . . .
+        description: Mô Tả
+        placeholder_description: Mô Tả . . .
+        subject: Môn Học
+        new_videos: Thêm Mới Video
   courses:
     index:
       list_of_class: Danh Sách Các Khóa Học
