@@ -1,10 +1,9 @@
 class Admin::ExercisesAnswerController < Admin::AdminBaseController
   before_action :list_permissions, only: %i(new edit show index)
-  before_action :load_exercises_answer, only: %i(edit show update destroy)
+  before_action :load_exercises_answer, except: %i(index new edit )
   before_action :select_option_subjects, only: %i(new edit)
 
-  def index
-  end
+  def index; end
 
   def new
     @exercises_answer = ExercisesAnswer.new
@@ -18,7 +17,7 @@ class Admin::ExercisesAnswerController < Admin::AdminBaseController
       redirect_to  admin_exercises_path
     else
       flash[:danger] = t "update_failed"
-      redirect_to  new_admin_exercise_path
+      render :new
     end
   end
 
@@ -55,7 +54,7 @@ class Admin::ExercisesAnswerController < Admin::AdminBaseController
 
   def load_exercises_answer
     @exercises_answer = Exercise.find_by id: params[:id]
-    return if (@exercises_answer)
+    return if @exercises_answer
     flash[:danger] = t "not_found"
     render :index
   end

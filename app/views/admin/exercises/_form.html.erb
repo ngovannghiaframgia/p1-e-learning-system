@@ -6,6 +6,7 @@
       <%= f.text_area :question, class: "form-control", placeholder: t("exercises.placeholder_question") %>
     </div>
   </div>
+
   <div class="form-group row">
     <%= f.label :subject, t(".subject"), class: "col-lg-3 col-form-label form-control-label" %>
     <div class="col-lg-9">
@@ -14,6 +15,7 @@
       { }, { class: "form-control" } %>
     </div>
   </div>
+
   <%= f.fields_for :exercises_answer do |s| %>
     <div class="form-group row">
       <%= s.label :content, "Answer", class: "col-lg-3 col-form-label form-control-label" %>
@@ -25,6 +27,7 @@
       </div>
     </div>
   <% end %>
+
   <div class="form-group row">
     <label class="col-lg-3 col-form-label form-control-label"></label>
     <div class="col-lg-9">
