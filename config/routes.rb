@@ -12,7 +12,6 @@ Rails.application.routes.draw do
     registration: "register", sign_up: "cmon_let_me_in"
   }
 
-  resources :users
   namespace :admin do
     resources :users
     resources :subjects
@@ -24,7 +23,11 @@ Rails.application.routes.draw do
     end
     resources :courses_users
     resources :videos
+    resources :exercises
   end
   resources :courses
   resources :courses_users
+  resources :users
+  resources :exercises
+  resources :dashboard
 end

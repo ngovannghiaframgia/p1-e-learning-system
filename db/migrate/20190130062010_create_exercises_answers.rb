@@ -2,7 +2,7 @@ class CreateExercisesAnswers < ActiveRecord::Migration[5.2]
   def change
     create_table :exercises_answers do |t|
       t.text :content
-      t.boolean :is_current
+      t.integer :is_current,  null: false, default: 0
       t.references :exercise, foreign_key: true
 
       t.timestamps

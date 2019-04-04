@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require "bootstrap.min.css"
+ *= require "sb-admin-2.min.css"
  *= require "grayscale.min.css"
  *= require "all.min.css"
  *= require "font-awesome"

@@ -23,9 +23,9 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if resource.student?
-      courses_path
+      dashboard_index_path
     else resource.admin?
-      admin_courses_path
+      dashboard_index_path
     end
   end
 

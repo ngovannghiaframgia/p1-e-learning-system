@@ -26,6 +26,19 @@
   background: aliceblue;
 }
 
+.btn-sc{
+  float: left;
+  margin-left: 10px;
+}
+
+.img-chart{
+  background-image: image_url("combination-chart.png");
+}
+
+.img-chart-1{
+  background-image: image_url("chart.png");
+}
+
 .btn-login{
   -webkit-box-shadow:0 .1875rem .1875rem 0 rgba(0,0,0,.1)!important;
   box-shadow:0 .1875rem .1875rem 0 rgba(0,0,0,.1)!important;
