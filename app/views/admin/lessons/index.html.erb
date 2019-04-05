@@ -3,14 +3,16 @@
     <div class="col-sm-4">
       <div class="page-header float-left">
         <div class="page-title">
-          <h1><%=link_to t("lessons.index.new_lessons"), new_admin_lesson_path, class: "btn btn-outline-success" %></h1>
+          <h1><%=link_to t("lessons.index.new_lessons"),
+            new_admin_course_lesson_path, class: "btn btn-outline-success",
+            "data-turbolinks": false %></h1>
         </div>
       </div>
     </div>
     <div class="col-sm-8">
       <div class="page-header float-left">
         <div class="page-title search-fr row">
-          <%= search_form_for @search, url: admin_lessons_path do |f| %>
+          <%= search_form_for @search, url: admin_course_lessons_path do |f| %>
             <div class="col-sm-9">
               <%= f.text_field :content, class: "form-control", placeholder: "Enter search term" %>
             </div>
@@ -37,8 +39,7 @@
                   <tr>
                     <th scope="col"><%= t "numbers" %></th>
                     <th scope="col"><%= t "lessons.index.title" %></th>
-                    <th scope="col"><%= t "lessons.index.content" %></th>
-                    <th scope="col"><%= t "courses.index.course" %></th>
+                    <th scope="col"><%= t "lessons.index.video" %></th>
                     <th scope="col"><%= t ".actions" %></th>
                   </tr>
                 </thead>
@@ -47,24 +48,32 @@
                     <tr>
                       <td scope="row"><%= index+1 %></td>
                       <td><%= lesson.title %></td>
-                      <td><%= lesson.content %></td>
-                      <td><%= lesson.course.course_name %></td>
+                      <td>
+                        <% if lesson.lesson_videos.empty? %>
+                          <%= t "no_video" %>
+                        <% else %>
+                          <%= lesson.lesson_videos[0].video.link.html_safe %>
+                        <% end %>
+                      </td>
                       <td>
                         <div class="icon-btn">
-                          <%= link_to  admin_lesson_path(lesson), "data-tooltip" => t("details"),
-                                   class: "btn btn-outline-primary btn-border-radius" do %>
+                          <%= link_to  admin_course_lesson_path(@course,lesson),
+                            "data-tooltip" => t("details"),
+                            class: "btn btn-outline-primary btn-border-radius" do %>
                             <i class="fa fa-info-circle" aria-hidden="true"></i>
                           <% end %>
                         </div>
                         <div class="icon-btn">
-                          <%= link_to  edit_admin_lesson_path(lesson), "data-tooltip" => t("edit"),
-                                 class: "btn btn-outline-info btn-border-radius" do %>
+                          <%= link_to  edit_admin_course_lesson_path(@course,lesson),
+                            "data-tooltip" => t("edit"), "data-turbolinks": false,
+                            class: "btn btn-outline-info btn-border-radius" do %>
                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                           <% end %>
                         </div>
                         <div class="icon-btn">
-                          <%= link_to admin_lesson_path(lesson), method: :delete, data: {confirm: t("you_sure_delete")},
-                              class: "btn btn-outline-danger btn-border-radius", "data-tooltip" => t("delete") do %>
+                          <%= link_to  admin_course_lesson_path(@course,lesson), "data-tooltip" => t("delete"),
+                            method: :delete, data: {confirm: t("you_sure")},
+                            class: "btn btn-outline-danger btn-border-radius" do %>
                             <i class="fa fa-trash-o" aria-hidden="true"></i>
                           <% end %>
                         </div>

@@ -1,5 +1,4 @@
 class Admin::CoursesUsersController < Admin::AdminBaseController
-  before_action :list_permissions, only: %i(new edit show index)
   before_action :load_course_user, only: %i(update destroy)
 
   def update

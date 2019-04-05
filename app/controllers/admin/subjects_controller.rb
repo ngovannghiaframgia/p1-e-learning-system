@@ -1,5 +1,4 @@
 class Admin::SubjectsController < Admin::AdminBaseController
-  before_action :list_permissions, only: %i(new edit show index)
   before_action :load_subject, only: %i(edit show update destroy)
   before_action :admin_user
 

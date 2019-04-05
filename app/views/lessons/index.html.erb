@@ -1,4 +1,4 @@
-
+<%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
 <div class="row">
   <div class="breadcrumbs">
     <div class="col-sm-4">
@@ -43,7 +43,7 @@
                     <tr>
                       <td><%= lessons.title %></td>
                       <td><%= lessons.content %></td>
-                      <td style="">
+                      <td>
                         <%= link_to do %>
                           <button class="btn btn-primary"><%= t "lessons.index.summary" %></button>
                         <% end %>

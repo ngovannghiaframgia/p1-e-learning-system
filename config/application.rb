@@ -10,6 +10,12 @@ module P1ELearningSystem
     config.i18n.load_path += Dir[Rails.root.join("config", "locales", "**", "*.{rb,yml}")]
     config.i18n.available_locales = [:en, :vi]
 
+    config.assets.precompile += Ckeditor.assets
+    config.assets.precompile += %w( ckeditor/* ckeditor_assets/* *.png *.jpg *.jpeg *.gif img/*)
+    config.encoding = "utf-8"
+    config.assets.paths << "#{Rails}/vendor/assets/*"
+    config.autoload_paths += %w(#{config.root}/app/models/ckeditor)
+
     config.generators do |g|
       g.test_framework :rspec,
         fixtures: true,

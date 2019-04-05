@@ -24,6 +24,11 @@ class Ability
     can %i(show), Admin::UsersController
 
     can :manage, Video
+
+    can :access, :ckeditor
+
+    can [:read, :create, :destroy], Ckeditor::Picture
+    can [:read, :create, :destroy], Ckeditor::AttachmentFile
   end
 
   def role_supperadmin

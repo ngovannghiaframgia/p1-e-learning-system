@@ -1,11 +1,14 @@
 <% provide :title, t("lessons.index.new_lessons") %>
 <% provide :button_text, t("save") %>
 <% provide :method_form, :post %>
-<% provide :path_form, admin_lessons_path %>
+<% provide :path_form, admin_course_lessons_path %>
+
+<%= javascript_include_tag Ckeditor.cdn_url, "data-turbolinks-track": "reload" %>
+<%= javascript_include_tag "admin/lesson", "data-turbolinks-track": "reload" %>
 
 <div class="container py-3">
   <div class="row">
-    <div class="mx-auto col-sm-6">
+    <div class="mx-auto col-sm-12">
       <div class="card">
         <div class="card-header">
           <h4 class="mb-0"><%= t "lessons.index.new_lessons" %></h4>

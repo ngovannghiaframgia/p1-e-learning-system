@@ -9,6 +9,7 @@ class Course < ApplicationRecord
 
   scope :order_by, -> {order created_at: :desc}
   scope :unregistered_courses, ->  (list_id_course){ where("id NOT IN (?)", list_id_course) }
+  scope :by_subject_id, -> (subject_id){ where subject_id: subject_id }
 
   def self.list_unregistered_courses user_id
     list_id_course = CourseUser.course_of_user(user_id).map(&:course_id)
