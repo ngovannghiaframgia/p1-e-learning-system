@@ -33,6 +33,11 @@ gem "mini_magick"
 gem "carrierwave"
 gem "ransack"
 gem "pry", "~> 0.12.2"
+gem "omniauth"
+gem "omniauth-facebook"
+gem "omniauth-google-oauth2"
+gem "figaro"
+gem "devise_token_auth"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

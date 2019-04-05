@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_03_27_090245) do
   end
 
   create_table "course_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "status", default: false, null: false
+    t.integer "status", default: 0, null: false
     t.decimal "debit", precision: 10
     t.bigint "user_id"
     t.bigint "course_id"
@@ -168,6 +168,8 @@ ActiveRecord::Schema.define(version: 2019_03_27_090245) do
     t.integer "role", default: 0, null: false
     t.string "avt"
     t.boolean "active"
+    t.string "uid"
+    t.string "provider"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

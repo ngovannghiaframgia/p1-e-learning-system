@@ -11,7 +11,6 @@ class Admin::CoursesUsersController < Admin::AdminBaseController
         name_permission: course.course_name,
         path: courses_user_path(course),
         icon: '<i class="fa fa-check-square-o" aria-hidden="true"></i>'
-
       permission.save
       flash[:success] = t "create_success"
       redirect_to admin_courses_users_path
