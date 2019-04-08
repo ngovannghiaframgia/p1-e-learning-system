@@ -25,9 +25,11 @@ Rails.application.routes.draw do
     resources :videos
     resources :exercises
   end
+
   resources :courses
   resources :courses_users
   resources :users
   resources :exercises
   resources :dashboard
+
 end

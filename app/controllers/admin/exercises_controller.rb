@@ -19,10 +19,10 @@ class Admin::ExercisesController < Admin::AdminBaseController
     @exercises = Exercise.new exercise_params
     if @exercises.save
       flash[:success] = t "create_success"
-      redirect_to  admin_exercises_path
+      redirect_to admin_exercises_path
     else
       flash[:danger] = t "update_failed"
-      redirect_to  new_admin_exercise_path
+      redirect_to new_admin_exercise_path
     end
   end
 
@@ -60,8 +60,9 @@ class Admin::ExercisesController < Admin::AdminBaseController
 
   def load_exercises
     @exercises = Exercise.find_by id: params[:id]
-    return if (@exercises)
+    return if @exercises
     flash[:danger] = t "not_found"
     render :index
   end
+
 end
