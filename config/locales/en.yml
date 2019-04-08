@@ -26,6 +26,7 @@ en:
   update_failed: Update Failed
   register_success: Register Success
   register_failed: Register Failed
+  register_course: Registers Courses
   close: Close
   act: Act
   details: Details
@@ -273,6 +274,12 @@ en:
         show_lesson: Show Lesson
         video: Video
         title: Title
+  exercises:
+    question: Question
+    new_exercisies: New Exercises
+    exercises_list: Exercises list
+    subject: Subjects
+    placeholder_question: Question . . .
   courses:
     index:
       list_of_class: List Of Course

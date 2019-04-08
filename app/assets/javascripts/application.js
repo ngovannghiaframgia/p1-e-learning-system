@@ -13,6 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require "jquery.min.js"
+//= require "Chart.min.js"
+//= require "chart-area-demo.js"
+//= require "chart-pie-demo.js"
 //= require "popper.min.js"
 //= require "bootstrap.bundle.min.js"
 //= require "jquery.easing.min.js"
@@ -27,3 +30,4 @@
 //= require "axios.min.js"
 //= require tooltip
 //= require init_ckeditor
+//= require "sb-admin-2.min.js"

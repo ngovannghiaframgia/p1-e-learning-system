@@ -1,0 +1,19 @@
+<% provide :title, t("exercises.new_exercisies") %>
+<% provide :button_text, t("save") %>
+<% provide :method_form, :post %>
+<% provide :path_form, admin_exercises_path %>
+
+<div class="container py-3" >
+  <div class="row">
+    <div class="mx-auto col-sm-6">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="mb-0"><%= t "exercises.new_exercisies" %></h4>
+        </div>
+        <div class="card-body">
+          <%= render "form"%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

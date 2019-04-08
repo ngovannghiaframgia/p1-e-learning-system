@@ -25,6 +25,7 @@ vi:
   update_failed: Cập Nhật Thất Bại
   register_success: Đăng Ký Thành Công
   register_failed: Đăng Ký Thất Bại
+  register_course: Đăng ký khóa học
   close: Hủy
   act: Hành Động
   details: Chi Tiết
@@ -259,6 +260,12 @@ vi:
         show_lesson: Chi Tiết Buổi Học
         video: Video
         title: Title
+    exercises:
+      question: Câu hỏi
+      new_exercisies: Thêm câu hỏi
+      exercises_list: Danh sách câu hỏi
+      subject: Môn học
+      placeholder_question: Câu hỏi . . .
   courses:
     index:
       list_of_class: Danh Sách Các Khóa Học

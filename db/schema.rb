@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2019_03_29_064512) do
     t.index ["user_id"], name: "index_course_users_on_user_id"
   end
 
-  create_table "courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.bigint "subject_id"
     t.bigint "user_id"
     t.string "course_name"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 2019_03_29_064512) do
 
   create_table "exercises_answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
-    t.boolean "is_current"
+    t.integer "is_current", default: 0, null: false
     t.bigint "exercise_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -121,7 +121,7 @@ ActiveRecord::Schema.define(version: 2019_03_29_064512) do
     t.index ["homework_id"], name: "index_homeworks_details_on_homework_id"
   end
 
-  create_table "lesson_videos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "lesson_videos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.bigint "lesson_id"
     t.bigint "video_id"
     t.datetime "created_at", null: false
@@ -132,7 +132,7 @@ ActiveRecord::Schema.define(version: 2019_03_29_064512) do
     t.index ["video_id"], name: "index_lesson_videos_on_video_id"
   end
 
-  create_table "lessons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "lessons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.bigint "user_id"
@@ -145,7 +145,7 @@ ActiveRecord::Schema.define(version: 2019_03_29_064512) do
     t.index ["user_id"], name: "index_lessons_on_user_id"
   end
 
-  create_table "permission_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "permission_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.integer "user_id"
     t.string "name_permission"
     t.string "path"
@@ -154,21 +154,21 @@ ActiveRecord::Schema.define(version: 2019_03_29_064512) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "permissions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "permissions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.string "name_permission"
     t.string "path"
     t.integer "role_id"
     t.string "icon"
   end
 
-  create_table "subjects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "subjects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.string "name_subject"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "fullname"
@@ -179,8 +179,6 @@ ActiveRecord::Schema.define(version: 2019_03_29_064512) do
     t.integer "role", default: 0, null: false
     t.string "avt"
     t.boolean "active"
-    t.string "uid"
-    t.string "provider"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -200,7 +198,7 @@ ActiveRecord::Schema.define(version: 2019_03_29_064512) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
-  create_table "videos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "videos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.string "name_video"
     t.string "link"
     t.integer "lesson_number"
