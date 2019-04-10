@@ -6,4 +6,6 @@ class Exercise < ApplicationRecord
   scope :order_by, -> {order created_at: :desc}
 
   accepts_nested_attributes_for :exercises_answer, allow_destroy: true
+
+  scope :by_subject_id, -> (subject_id){ where subject_id: subject_id }
 end

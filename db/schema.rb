@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_29_064512) do
+ActiveRecord::Schema.define(version: 2019_04_06_164633) do
 
   create_table "ckeditor_assets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "data_file_name", null: false
@@ -79,22 +79,29 @@ ActiveRecord::Schema.define(version: 2019_03_29_064512) do
     t.text "content"
     t.integer "is_current", default: 0, null: false
     t.bigint "exercise_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["exercise_id", "created_at"], name: "index_exercises_answers_on_exercise_id_and_created_at"
     t.index ["exercise_id"], name: "index_exercises_answers_on_exercise_id"
+    t.index ["user_id", "created_at"], name: "index_exercises_answers_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_exercises_answers_on_user_id"
   end
 
   create_table "homework_results", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.decimal "total_score", precision: 10
-    t.decimal "reward_points", precision: 10
     t.text "comment"
+    t.bigint "exercises_answer_id"
     t.bigint "user_id"
     t.bigint "homework_id"
+    t.bigint "homeworks_detail_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["exercises_answer_id", "created_at"], name: "index_homework_results_on_exercises_answer_id_and_created_at"
+    t.index ["exercises_answer_id"], name: "index_homework_results_on_exercises_answer_id"
     t.index ["homework_id", "created_at"], name: "index_homework_results_on_homework_id_and_created_at"
     t.index ["homework_id"], name: "index_homework_results_on_homework_id"
+    t.index ["homeworks_detail_id", "created_at"], name: "index_homework_results_on_homeworks_detail_id_and_created_at"
+    t.index ["homeworks_detail_id"], name: "index_homework_results_on_homeworks_detail_id"
     t.index ["user_id", "created_at"], name: "index_homework_results_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_homework_results_on_user_id"
   end
@@ -168,7 +175,20 @@ ActiveRecord::Schema.define(version: 2019_03_29_064512) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
+  create_table "total_homework_results", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "comment"
+    t.bigint "user_id"
+    t.bigint "homework_id"
+    t.integer "total_true"
+    t.integer "total_false"
+    t.integer "reward_points"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["homework_id"], name: "index_total_homework_results_on_homework_id"
+    t.index ["user_id"], name: "index_total_homework_results_on_user_id"
+  end
+
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "fullname"
@@ -221,7 +241,10 @@ ActiveRecord::Schema.define(version: 2019_03_29_064512) do
   add_foreign_key "courses", "users"
   add_foreign_key "exercises", "subjects"
   add_foreign_key "exercises_answers", "exercises"
+  add_foreign_key "exercises_answers", "users"
+  add_foreign_key "homework_results", "exercises_answers"
   add_foreign_key "homework_results", "homeworks"
+  add_foreign_key "homework_results", "homeworks_details"
   add_foreign_key "homework_results", "users"
   add_foreign_key "homeworks", "lessons"
   add_foreign_key "homeworks_details", "exercises"
@@ -230,6 +253,8 @@ ActiveRecord::Schema.define(version: 2019_03_29_064512) do
   add_foreign_key "lesson_videos", "videos"
   add_foreign_key "lessons", "courses"
   add_foreign_key "lessons", "users"
+  add_foreign_key "total_homework_results", "homeworks"
+  add_foreign_key "total_homework_results", "users"
   add_foreign_key "videos", "subjects"
   add_foreign_key "videos", "users"
 end

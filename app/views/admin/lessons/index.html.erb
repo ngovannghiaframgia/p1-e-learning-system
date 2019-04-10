@@ -77,6 +77,12 @@
                             <i class="fa fa-trash-o" aria-hidden="true"></i>
                           <% end %>
                         </div>
+                        <div class="icon-btn">
+                          <%= link_to  admin_homework_path(lesson), "data-tooltip" => t("homeworks"),
+                            class: "btn btn-outline-success btn-border-radius", "data-turbolinks": false do %>
+                            <i class="fa fa-table" aria-hidden="true"></i>
+                          <% end %>
+                        </div>
                       </td>
                     </tr>
                   <% end %>

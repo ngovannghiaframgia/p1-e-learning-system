@@ -35,6 +35,8 @@ vi:
   created_at: Ngày Tạo
   updated_at: Ngày Cập Nhật
   no_video: Không Có Video
+  submit_homework: Nộp Bài Tập
+  homeworks: Bài Tập
   layout:
     header:
       my_profile: Thông tin của tôi
@@ -266,6 +268,7 @@ vi:
       exercises_list: Danh sách câu hỏi
       subject: Môn học
       placeholder_question: Câu hỏi . . .
+      edit_exercises: Sửa Câu Hỏi
   courses:
     index:
       list_of_class: Danh Sách Các Khóa Học
@@ -291,3 +294,16 @@ vi:
       list_lesson_of_course: Danh sách buổi học của khóa học
       not_yet_confirmed: Chưa Được Xác Nhận
       title: Tiêu Đề
+  homework:
+    show:
+      homework: Bài Tập Về Nhà
+      total_correct: Tổng số câu đúng
+      total_false: Tổng số câu sai
+      reward_points: Điểm Thưởng
+      name_homework: Tên Bài Tập
+      lesson_number: Số bài
+      placeholder_name_homework: Tên Bài Tập . . .
+      placeholder_lesson_number: Số bài . . .
+      exercises: Câu Hỏi
+      list_exercised: "Câu Hỏi Đã Chọn : "
+      exercises: Danh Sách Câu Hỏi

@@ -3,10 +3,10 @@ class UsersController < ApplicationController
 
   before_action :list_permissions, only: %i(edit show index)
 
-  load_and_authorize_resource except: %i(new create)
+  load_and_authorize_resource except: %i(new create update)
 
   before_action :load_user, except: %i(new create)
-  before_action :admin_user, only: %i(index show)
+  before_action :admin_user, only: :index
   before_action :correct_user, only: %i(show edit)
 
   def index
@@ -14,6 +14,18 @@ class UsersController < ApplicationController
 
   def show
   end
+
+  def update
+    user = params.require(:user).permit :fullname, :birth, :gender, :address, :numberphone
+    if @user.update user
+      flash[:success] = t "updated_success"
+      redirect_to dashboard_index_path
+    else
+      flash[:danger] = t "update_failed"
+      render :show
+    end
+  end
+
 
   def new
     @user = User.new

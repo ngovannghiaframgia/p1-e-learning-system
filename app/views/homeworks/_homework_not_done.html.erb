@@ -1,0 +1,20 @@
+<%= form_for :homework, url: {
+  action: :create, controller: "admin/calculates_points"} do |f|%>
+  <% @list_homework_details.each_with_index do |homework_detail, index| %>
+  <div class="card card-body">
+    <h4>Câu <%= index + 1%> : <%= homework_detail.exercise.question  %></h4>
+    <% homework_detail.exercise.exercises_answer.each_with_index do |answer, i|  %>
+      <h5>
+        <%= radio_button_tag "answer[#{homework_detail.id}]", answer.id %>
+        <%= answer.content %>
+      </h5>
+    <% end %>
+  </div>
+  <% end %>
+  <%= hidden_field_tag "lesson_id", @lesson.id %>
+  <%= link_to t("back"), courses_user_path(@lesson.course.id), class: "btn btn-secondary" %>
+  <% if @homework %>
+    <%= hidden_field_tag "homework_id", @homework.id %>
+    <%= f.button t("submit_homework"), class: "btn btn-info btn-homework", type: "submit" %>
+  <% end %>
+<% end %>

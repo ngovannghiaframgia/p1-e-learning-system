@@ -34,6 +34,8 @@ class Admin::CoursesUsersController < Admin::AdminBaseController
 
   def destroy
     if @course_user.destroy
+      course = Course.find_by id: @course_user.course_id
+      course.update! quantity_registered: course.quantity_registered - 1
       flash[:success] = t "delete_success"
       redirect_to admin_courses_users_path
     else

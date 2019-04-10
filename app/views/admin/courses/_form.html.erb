@@ -28,9 +28,14 @@
   <div class="form-group row">
     <%= f.label :subject, t(".subject"), class: "col-lg-3 col-form-label form-control-label" %>
     <div class="col-lg-9">
-      <%= f.select :subject_id, options_for_select(@list_subjects,
-      selected: @course),
-      { }, { class: "form-control" } %>
+      <% if @course.id != nil %>
+        <%= f.select :subject_id, options_for_select(@list_subjects,
+          selected: @course.subject.id),
+          { }, { class: "form-control" } %>
+      <% else %>
+        <%= f.select :subject_id, options_for_select(@list_subjects),
+          { }, { class: "form-control" } %>
+      <% end %>
     </div>
   </div>
 

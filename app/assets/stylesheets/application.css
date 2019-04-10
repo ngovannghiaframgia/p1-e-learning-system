@@ -10,8 +10,8 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require "bootstrap.min.css"
  *= require "sb-admin-2.min.css"
+ *= require "bootstrap.min.css"
  *= require "grayscale.min.css"
  *= require "all.min.css"
  *= require "font-awesome"

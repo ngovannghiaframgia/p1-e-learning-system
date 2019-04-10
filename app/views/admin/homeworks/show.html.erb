@@ -1,0 +1,88 @@
+<%= javascript_include_tag "admin/homework", "data-turbolinks-track": "reload" %>
+<div class="row">
+  <div class="breadcrumbs">
+    <div class="col-sm-4">
+      <div class="page-header float-left">
+        <div class="page-title">
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="page-header float-right">
+        <div class="page-title">
+          <ol class="breadcrumb text-right">
+            <li><a href="#"></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content mt-3">
+    <div class="animated fadeIn">
+      <div class="row justify-content-md-center">
+        <div class="col-md-9">
+          <div class="card">
+            <div class="card-header">
+              <strong class="card-title"><%= t ".homework" %></strong>
+            </div>
+            <div class="table-responsive card-body">
+              <%= form_for @homework, url: admin_homework_path, html: {class: "form"},
+                method: :patch, local: true do |f| %>
+                <%= f.hidden_field :homework_id, value: @homework.id %>
+                <%= render "shared/error_messages", object: f.object %>
+                <div class="form-group row">
+                  <%= f.label :name_homework, t("homework.show.name_homework"),
+                    class: "col-lg-3 col-form-label form-control-label"  %>
+                  <div class="col-lg-9">
+                    <%= f.text_field :name_homework, class: "form-control",
+                      placeholder: t("homework.show.placeholder_name_homework") %>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <%= f.label :lesson_number, t("homework.show.lesson_number"),
+                    class: "col-lg-3 col-form-label form-control-label" %>
+                  <div class="col-lg-9">
+                    <%= f.number_field :lesson_number, class: "form-control",
+                      placeholder: t("homework.show.placeholder_lesson_number") %>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <%= f.label :exercises, t("homework.show.exercises"), class: "col-lg-3 col-form-label form-control-label" %>
+                  <div class="col-lg-9">
+                    <select name="exercise" class="form-control" id="exercise">
+                        <option value="" disabled="disabled" selected="true"></option>
+                        <%= options_for_select(@list_exercises) %>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <%= f.label :list_exercises, t("homework.show.list_exercised"), class: "col-lg-3 col-form-label form-control-label" %>
+                </div>
+                <div class="form-group row">
+                  <div class="col-lg-12" id="list_exercises">
+                    <% if @homework != nil %>
+                      <% @list_homework_details.each_with_index do |homework_detail, index| %>
+                        <div class="margin-top-bottom-1em">
+                          <input type="text" disabled="disabled" value="<%= homework_detail.exercise.question %>">
+                          <i class="fa fa-times-circle-o cursor-pointer"
+                            aria-hidden="true" data-id="<%= homework_detail.id %>"></i>
+                        </div>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label"></label>
+                  <div class="col-lg-9">
+                    <%= link_to t("cancel"), admin_course_lessons_path( @lesson.course), class: "btn btn-secondary" %>
+                    <%= f.button t("save"), class: "btn btn-primary" %>
+                  </div>
+                </div>
+            <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

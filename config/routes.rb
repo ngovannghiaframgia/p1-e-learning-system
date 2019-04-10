@@ -24,10 +24,16 @@ Rails.application.routes.draw do
     resources :courses_users
     resources :videos
     resources :exercises
+    resources :calculates_points, only: :create
+    resources :homeworks
+    resources :homeworks_details, only: %i(create destroy)
+
   end
 
   resources :courses
   resources :courses_users
+  resources :lessons, only: :show
+  resources :homeworks, only: :show
   resources :users
   resources :exercises
   resources :dashboard

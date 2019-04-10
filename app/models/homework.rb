@@ -1,10 +1,8 @@
 class Homework < ApplicationRecord
   has_many :homeworks_details, dependent: :destroy
-  belongs_to :lesson
+  has_many :total_homework_result, dependent: :destroy
 
-  validates :name_homework, presence: true
-  validates :lesson_number, presence: true
-  validates :total_exercise, presence: true
+  belongs_to :lesson
 
   scope :order_asc, -> {order created_at: :asc }
   scope :by_role, -> (role){ where role: role }
